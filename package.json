@@ -4,6 +4,9 @@
   "description": "A warm-coloured minimalist VSCode theme.",
   "version": "0.0.1",
   "type": "module",
+  "scripts": {
+    "dev": "soybean run ."
+  },
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -15,15 +18,13 @@
       {
         "label": "Stella",
         "uiTheme": "vs-dark",
-        "path": "./themes/Stella-color-theme.json"
+        "path": "./themes/stella.json"
       }
     ]
   },
-  "dependencies": {
-    "js-yaml": "^4.1.0",
-    "soybean": "^0.3.2"
-  },
   "devDependencies": {
-    "@types/node": "^20.8.7"
+    "@types/node": "^20.8.7",
+    "js-yaml": "^4.1.0",
+    "soybean": "^0.3.3"
   }
 }

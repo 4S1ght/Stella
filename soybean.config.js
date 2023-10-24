@@ -52,7 +52,6 @@ let lintScope = ""
 
 // ==================================================================
 
-
 export default Soybean({
     cp: {},
     routines: {
@@ -63,6 +62,9 @@ export default Soybean({
             {
                 file: './src',
                 handle: h.group([
+
+                    // Don't react to events events that aren't a file save (like delete, rename, etc)
+                    h.handle(e => e.watchEventType !== 'change' && e.stopPropagation()),
 
                     h.fs.readFile('./src/{{filename}}', 'yamlFile', 'utf-8'),
                     h.update('yamlFile', data => yaml.load(data), { schema }),

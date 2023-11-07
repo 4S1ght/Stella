@@ -1,9 +1,19 @@
 name: Stella
 author: 4S1ght
 stella:
-    ui:
-    code:
-    ansi:
+  ui:
+    - &BGDark       '#141316'
+    - &BGLight      '#19181B'
+    - &BGAccent     '#59595F'
+    - &BGShadow     '#141316'
+    - &FG           '#c7bdb5'
+    - &Main         '#F5B26B'
+  code:
+    - &Highlight  '#FF645C'
+    - &Text       '#9d9ea6'
+    - &Error      '#ff4a41'
+    - &Warn       '#F5B26B'
+    - &Match      '#c0e271'
+  ansi:
 
 colors:
-    - ''

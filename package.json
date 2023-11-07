@@ -25,6 +25,6 @@
   "devDependencies": {
     "@types/node": "^20.8.7",
     "js-yaml": "^4.1.0",
-    "soybean": "^0.3.3"
+    "soybean": "^0.3.4"
   }
 }

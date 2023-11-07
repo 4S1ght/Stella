@@ -7,3 +7,6 @@ _cache/
 
 # dest
 themes/
+
+# other
+.DS_Store

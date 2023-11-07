@@ -1,18 +1,19 @@
 
 import { Soybean } from 'soybean'
 import h from 'soybean/handlers'
-import yaml, { YAMLException } from 'js-yaml'
+import yaml from 'js-yaml'
 import https from 'https'
 
 // ==================================================================
 
-const schema = new yaml.DEFAULT_SCHEMA.extend([
+const types = [
     new yaml.Type('!alpha', {
         kind: 'sequence',
         construct: ([hexRGB, alpha]) => hexRGB + alpha,
         represent: ([hexRGB, alpha]) => hexRGB + alpha,
     })
-])
+]
+const schema = new yaml.DEFAULT_SCHEMA.extend(types)
 
 const getDocsKeys = async e => {
 
@@ -67,7 +68,7 @@ export default Soybean({
                     h.handle(e => e.watchEventType !== 'change' && e.stopPropagation()),
 
                     h.fs.readFile('./src/{{filename}}', 'yamlFile', 'utf-8'),
-                    h.update('yamlFile', data => yaml.load(data), { schema }),
+                    h.update('yamlFile', data => yaml.load(data, { schema })),
 
                     h.json.stringify('yamlFile', 'jsonFile', 4),
                     h.update('filename', name => name.split('.')[0] + '.json'),
@@ -97,7 +98,7 @@ export default Soybean({
         passthroughShell: false,
         keepHistory: 50,
         handlers: {
-            scope: h.handle(e => { lintScope = e.get('argv')[0] || "" })
+            scope: h.handle(e => { lintScope = e.argv[0] || "" })
         }
     }
 })

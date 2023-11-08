@@ -7,7 +7,7 @@ import https from 'https'
 // ==================================================================
 
 const types = [
-    new yaml.Type('!alpha', {
+    new yaml.Type('!a', {
         kind: 'sequence',
         construct: ([hexRGB, alpha]) => hexRGB + alpha,
         represent: ([hexRGB, alpha]) => hexRGB + alpha,

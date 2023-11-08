@@ -2,18 +2,99 @@ name: Stella
 author: 4S1ght
 stella:
   ui:
-    - &BGDark       '#141316'
-    - &BGLight      '#19181B'
-    - &BGAccent     '#59595F'
-    - &BGShadow     '#141316'
-    - &FG           '#c7bdb5'
-    - &Main         '#F5B26B'
+    - &BGDark       '#1B1B22'
+    - &BGLight      '#24252E'
+    - &BGAccent     '#535665'
+    - &BGDrop       '#939ed120'
+    - &BGMain       '#EFBB81'
+    - &BGSecond     '#FF6461'
+    - &FG           '#b4b7c8'
+  git:
   code:
-    - &Highlight  '#FF645C'
-    - &Text       '#9d9ea6'
-    - &Error      '#ff4a41'
-    - &Warn       '#F5B26B'
-    - &Match      '#c0e271'
   ansi:
 
 colors:
+
+  # General
+  foreground: *FG
+
+  # Title bar
+  titleBar.activeBackground: *BGDark                  # Title Bar background when the window is active.
+  titleBar.activeForeground: !a [*FG, 77]             # Title Bar foreground when the window is active.
+  titleBar.inactiveBackground: *BGDark                # Title Bar background when the window is inactive.
+  titleBar.inactiveForeground: !a [*FG, 33]           # Title Bar foreground when the window is inactive.
+  titleBar.border: !a [*BGAccent, 22]                                   # Title bar border color.
+
+  # Activity bar
+  activityBar.background: *BGDark                     # Activity Bar background color.
+  activityBar.dropBorder: *BGMain                     # Drag and drop feedback color for the activity bar items. The activity bar is showing on the far left or right and allows to switch between views of the side bar.
+  activityBar.foreground: !a [*FG, aa]                # Activity Bar foreground color (for example used for the icons).
+  activityBar.inactiveForeground: !a [*FG, 44]        # Activity Bar item foreground color when it is inactive.
+  activityBar.border: !a [*BGAccent, 22]              # Activity Bar border color with the Side Bar.
+  activityBarBadge.background: !a [*BGMain, 88]       # Activity notification badge background color.
+  activityBarBadge.foreground: *FG                    # Activity notification badge foreground color.
+  activityBar.activeBorder:                           # Activity Bar active indicator border color.
+  activityBar.activeBackground:                       # Activity Bar optional background color for the active element.
+  activityBar.activeFocusBorder:                      # Activity bar focus border color for the active item.
+
+  # Sidebar
+  sideBar.background: *BGDark                         # Side Bar background color.
+  sideBar.foreground: !a [*FG, 88]                             # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.
+  sideBar.border:                                     # Side Bar border color on the side separating the editor.
+  sideBar.dropBackground: *BGDrop                     # Drag and drop feedback color for the side bar sections. The color should have transparency so that the side bar sections can still shine through.
+  sideBarTitle.foreground: !a [*FG, 88]               # Side Bar title foreground color.
+  sideBarSectionHeader.background: !a [*BGLight, ab]  # Side Bar section header background color.
+  sideBarSectionHeader.foreground: !a [*FG, 88]       # Side Bar section header foreground color.
+  sideBarSectionHeader.border:                        # Side bar section header border color.
+
+  # Editor tabs
+  tab.activeBackground: *BGLight                      # Active Tab background color in an active group.
+  tab.inactiveBackground: *BGDark                     # Inactive Tab background color.
+
+  tab.unfocusedActiveBackground:                      # Active Tab background color in an inactive editor group.
+  tab.activeForeground:                               # Active Tab foreground color in an active group.
+  tab.border: '#00000000'                           # Border to separate Tabs from each other.
+  tab.activeBorder:                                   # Bottom border for the active tab.
+  tab.unfocusedActiveBorder:                          # Bottom border for the active tab in an inactive editor group.
+  tab.activeBorderTop:                                # Top border for the active tab.
+  tab.unfocusedActiveBorderTop:                       # Top border for the active tab in an inactive editor group
+  tab.lastPinnedBorder:                               # Border on the right of the last pinned editor to separate from unpinned editors.
+  tab.unfocusedInactiveBackground:                    # Inactive Tab background color in an unfocused group
+  tab.inactiveForeground: !a [*FG, 88]                # Inactive Tab foreground color in an active group.
+  tab.unfocusedActiveForeground:                      # Active tab foreground color in an inactive editor group.
+  tab.unfocusedInactiveForeground:                    # Inactive tab foreground color in an inactive editor group.
+  tab.hoverBackground: !a [*BGLight, aa]              # Tab background color when hovering
+  tab.hoverForeground:                                # Tab foreground color when hovering
+  tab.unfocusedHoverBackground:                       # Tab background color in an unfocused group when hovering
+  tab.unfocusedHoverForeground:                       # Tab foreground color in an unfocused group when hovering
+  tab.hoverBorder:                                    # Border to highlight tabs when hovering
+  tab.unfocusedHoverBorder:                           # Border to highlight tabs in an unfocused group when hovering
+  tab.activeModifiedBorder:                           # Border on the top of modified (dirty) active tabs in an active group.
+  tab.inactiveModifiedBorder:                         # Border on the top of modified (dirty) inactive tabs in an active group.
+  tab.unfocusedActiveModifiedBorder:                  # Border on the top of modified (dirty) active tabs in an unfocused group.
+  tab.unfocusedInactiveModifiedBorder:                # Border on the top of modified (dirty) inactive tabs in an unfocused group.
+  editorPane.background:                              # Background color of the editor pane visible on the left and right side of the centered editor layout.
+  sideBySideEditor.horizontalBorder:                  # Color to separate two editors from each other when shown side by side in an editor group from top to bottom.
+  sideBySideEditor.verticalBorder:                    # Color to separate two editors from each other when shown side by side in an editor group from left to right.
+
+  # Editor group
+  editorGroup.border:                                 # Color to separate multiple editor groups from each other.
+  editorGroup.dropBackground:                         # Background color when dragging editors around.
+  editorGroupHeader.noTabsBackground:                 # Background color of the editor group title header when Tabs are disabled (set "workbench.editor.showTabs": false).
+  editorGroupHeader.tabsBackground: *BGDark           # Background color of the Tabs container.
+  editorGroupHeader.tabsBorder:                       # Border color below the editor tabs control when tabs are enabled.
+  editorGroupHeader.border:                           # Border color between editor group header and editor (below breadcrumbs if enabled).
+  editorGroup.emptyBackground:                        # Background color of an empty editor group.
+  editorGroup.focusedEmptyBorder:                     # Border color of an empty editor group that is focused.
+  editorGroup.dropIntoPromptForeground: *FG           # Foreground color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+  editorGroup.dropIntoPromptBackground: *BGDark       # Background color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+  editorGroup.dropIntoPromptBorder: *BGAccent         # Border color of text shown over editors when dragging files. This text informs the user that they can hold shift to drop into the editor.
+
+  # Editor
+  editor.background: *BGLight                         # Editor background color.
+  editor.foreground: *FG                              # Editor default foreground color.
+  editorLineNumber.foreground: !a [*FG, 55]           # Color of editor line numbers.
+  editorLineNumber.activeForeground: *FG              # Color of the active editor line number.
+  editorLineNumber.dimmedForeground: !a [*FG, 33]     # Color of the final editor line when editor.renderFinalNewline is set to dimmed.
+  editorCursor.background: *BGDark                    # The background color of the editor cursor. Allows customizing the color of a character overlapped by a block cursor.
+  editorCursor.foreground: *BGSecond                  # Color of the editor cursor.

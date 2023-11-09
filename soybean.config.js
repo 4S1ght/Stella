@@ -77,7 +77,7 @@ export default Soybean({
                     h.fs.writeFile('./themes/{{filename}}', Symbol('jsonFile')),
 
                     // ============= LINTING =============
-
+                    h.set('keys', 0),
                     h.handle(async e => {
                         e.set('docsKeys', await getDocsKeys())
                     }),
@@ -91,8 +91,10 @@ export default Soybean({
                         const theme = e.yamlFile
                         if (!Object.keys(theme.colors || []).find(x => x === value) && value.indexOf(lintScope) === 0) {
                             console.warn(`\x1b[34m${value}\x1b[0m: \x1b[30m${desc}\x1b[0m`)
+                            e.update('keys', k => k+1)
                         }
-                    }))
+                    })),
+                    h.handle(e => console.log(`Missing keys: ${e.keys} (scope: ${lintScope || '?'})`))
                 ])
             }
         ]

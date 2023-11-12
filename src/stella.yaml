@@ -1,9 +1,10 @@
 name: Stella
 author: 4S1ght
 stella:
+
   ui:
     - &BGDark           '#1B1B22'
-    - &BGLight          '#24252E'
+    - &BGLight          '#2b2c36'
     - &BGBright         '#2f303a'
     - &BGBrighter       '#3a3b46'
     - &BGAccent         '#535665'
@@ -11,9 +12,10 @@ stella:
     - &BGMain           '#ffbc88'
     - &BGMainActive     '#ffd7a9'
     - &BGSecond         '#FF6461'
-    - &FG               '#989db6'
+    - &FG               '#a0a5be'
     - &FGLight          '#d9deff'
     - &FGDark           '#101013'
+
   git:
     - &GitIgnored       !a [*FG, 55]
     - &GitAdded         '#a6abc8'
@@ -24,17 +26,33 @@ stella:
     - &GitDeleted       '#FF6461'
     - &GitStageDeleted  '#ff3b38'
     - &GitRenamed       '#5d78aa'
+
   diff:
     - &DiffInserted     '#80ff45'
     - &DiffRemoved      '#dd4343'
+
   code:
     - &Error            '#FF6461'
     - &Warn             '#FFAD6E'
+  
+    - &TComment         !a [*FG, 66]
+    - &T1               '#abb2bf'
+    - &T2               '#de6a73'
+    - &T3               '#c678dd'
+    - &T4               '#61afef'
+    - &T5               '#98c379'
+    - &T6               '#d19a66'
+    - &T7               '#f5c676'
+    - &T8               '#828892'
+    - &T9               '#56B6C2'
+
+
   symbol:
     - &Sm               '#989db6'
     - &Sm-1             '#CC4967' 
     - &Sm-2             '#FFAD6E' 
     - &Sm-3             '#ffd68e'
+
   ansi:
 
 colors:
@@ -105,7 +123,7 @@ colors:
   editor.findMatchHighlightBorder:      !a [*BGSecond, aa]      # Border color of the other search matches.
   editor.findRangeHighlightBorder:                              # Border color the range limiting the search (Enable 'Find in Selection' in the find widget).
   editor.hoverHighlightBackground:                              # Highlight below the word for which a hover is shown. The color must not be opaque so as not to hide underlying decorations.
-  editor.lineHighlightBackground:       *BGBright                # Background color for the highlight of line at the cursor position.
+  editor.lineHighlightBackground:       *BGBright               # Background color for the highlight of line at the cursor position.
   editor.lineHighlightBorder:           '#00000000'           # Background color for the border around the line at the cursor position.
   editorUnicodeHighlight.border:                                # Border color used to highlight unicode characters.
   editorUnicodeHighlight.background:                            # Background color used to highlight unicode characters.
@@ -234,10 +252,10 @@ colors:
 
   # Editor tabs
   tab.activeBackground:                 *BGLight                # Active Tab background color in an active group.
+  tab.activeForeground:                 *FG                     # Active Tab foreground color in an active group.
   tab.inactiveBackground:               *BGDark                 # Inactive Tab background color.
 
   tab.unfocusedActiveBackground:                                # Active Tab background color in an inactive editor group.
-  tab.activeForeground:                                         # Active Tab foreground color in an active group.
   tab.border:                           '#00000000'           # Border to separate Tabs from each other.
   tab.activeBorder:                                             # Bottom border for the active tab.
   tab.unfocusedActiveBorder:                                    # Bottom border for the active tab in an inactive editor group.
@@ -318,8 +336,8 @@ colors:
   editorGhostText.background:                                               # Background color of the ghost text in the editor.
   editorGhostText.foreground:                                               # Foreground color of the ghost text shown by inline completion providers and the suggest preview.
   
-  editorStickyScroll.background:                                            # Editor sticky scroll background color.
-  editorStickyScrollHover.background:                                       # Editor sticky scroll on hover background color.
+  editorStickyScroll.background:                   *BGLight                 # Editor sticky scroll background color.
+  editorStickyScrollHover.background:              *BGBrighter              # Editor sticky scroll on hover background color.
 
   # Git
   gitDecoration.addedResourceForeground:            *GitAdded               # Color for added Git resources. Used for file labels and the SCM viewlet.
@@ -533,7 +551,7 @@ colors:
   # Symbol icons (shown in autocomplete popups)
   symbolIcon.arrayForeground:               *Sm               # The foreground color for array symbols.
   symbolIcon.booleanForeground:             *Sm               # The foreground color for boolean symbols.
-  symbolIcon.classForeground:               *Sm-2               # The foreground color for class symbols.
+  symbolIcon.classForeground:               *Sm-2             # The foreground color for class symbols.
   symbolIcon.colorForeground:               *Sm               # The foreground color for color symbols.
   symbolIcon.constantForeground:            *Sm               # The foreground color for constant symbols.
   symbolIcon.constructorForeground:         *Sm               # The foreground color for constructor symbols.
@@ -543,16 +561,16 @@ colors:
   symbolIcon.fieldForeground:               *Sm               # The foreground color for field symbols.
   symbolIcon.fileForeground:                *Sm               # The foreground color for file symbols.
   symbolIcon.folderForeground:              *Sm               # The foreground color for folder symbols.
-  symbolIcon.functionForeground:            *Sm-1               # The foreground color for function symbols.
-  symbolIcon.interfaceForeground:           *Sm-2               # The foreground color for interface symbols.
+  symbolIcon.functionForeground:            *Sm-1             # The foreground color for function symbols.
+  symbolIcon.interfaceForeground:           *Sm-2             # The foreground color for interface symbols.
   symbolIcon.keyForeground:                 *Sm               # The foreground color for key symbols.
-  symbolIcon.keywordForeground:             *Sm-1               # The foreground color for keyword symbols.
-  symbolIcon.methodForeground:              *Sm-1               # The foreground color for method symbols.
+  symbolIcon.keywordForeground:             *Sm-1             # The foreground color for keyword symbols.
+  symbolIcon.methodForeground:              *Sm-1             # The foreground color for method symbols.
   symbolIcon.moduleForeground:              *Sm               # The foreground color for module symbols.
-  symbolIcon.namespaceForeground:           *Sm-2               # The foreground color for namespace symbols.
+  symbolIcon.namespaceForeground:           *Sm-2             # The foreground color for namespace symbols.
   symbolIcon.nullForeground:                *Sm               # The foreground color for null symbols.
   symbolIcon.numberForeground:              *Sm               # The foreground color for number symbols.
-  symbolIcon.objectForeground:              *Sm-3               # The foreground color for object symbols.
+  symbolIcon.objectForeground:              *Sm-3             # The foreground color for object symbols.
   symbolIcon.operatorForeground:            *Sm               # The foreground color for operator symbols.
   symbolIcon.packageForeground:             *Sm               # The foreground color for package symbols.
   symbolIcon.propertyForeground:            *Sm               # The foreground color for property symbols.
@@ -564,3 +582,124 @@ colors:
   symbolIcon.typeParameterForeground:       *Sm               # The foreground color for type parameter symbols.
   symbolIcon.unitForeground:                *Sm               # The foreground color for unit symbols.
   symbolIcon.variableForeground:            *Sm               # The foreground color for variable symbols.
+
+tokenColors:
+
+  # ============= General ============= #
+
+  # Comments
+  - scope: 
+    - comment
+    - punctuation.definition.comment
+    settings:
+      foreground: *TComment
+
+  # ============= Strings ============= #
+
+  # Strings
+  - scope: 
+    - string
+    - string.quoted.double punctuation
+    - string.quoted.single punctuation
+    settings:
+      foreground: *T5
+
+  # String template syntax - eg. ${var}
+  - scope: meta.template.expression punctuation.definition
+    settings:
+      foreground: *T2
+
+  # ============= Operators ============= #
+  
+  # Operators - /+=&*
+  - scope: keyword.operator
+    settings:
+      foreground: *T8
+
+  # Punctuation - .,'"
+  - scope: punctuation
+    settings:
+      foreground: *T8
+
+  # Operator expressions - of / in
+  - scope: keyword.operator.expression
+    settings:
+      foreground: *T3
+
+  # ============= Keywords ============= #
+
+  # Control keywords - import, from, return, if, await, etc...
+  - scope: 
+    - keyword.control
+    - keyword.operator.new
+    settings:
+      foreground: *T3
+
+  # Storage keywords - that "store" a value
+  - scope: storage
+    settings:
+      foreground: *T3
+
+
+  # ============= Variables ============= #
+
+  # Variable
+  - scope: 
+    - variable
+    - support.variable
+    settings:
+      foreground: *T2
+
+  # Import variable - "*"
+  - scope: meta.import
+    settings:
+      foreground: *T2
+
+  # Constants
+  - scope: 
+    - constant
+    - variable.other.constant
+    settings:
+      foreground: *T6
+
+  # Parameters
+  - scope: variable.parameter
+    settings:
+      foreground: *T1
+
+  # ============= Methods ============= #
+
+  # Function
+  - scope: entity.name.function
+    settings:
+      foreground: *T4
+
+  # ============= Types ============= #
+
+  # Entity type
+  - scope: entity.name.type
+    settings:
+      foreground: *T7
+
+  # Entity type
+  - scope: support.type
+    settings:
+      foreground: *T9
+
+
+  # ================================================== #
+  #              LANGUAGE-SPECIFIC CONFIG              #
+  # ================================================== #
+
+  # ============= TypeScript / JavaScript ============= #
+
+  # Entity type
+  - scope: 
+    - keyword.operator.expression.typeof.ts
+    - keyword.operator.expression.typeof.js
+    - keyword.operator.expression.delete.ts
+    - keyword.operator.expression.delete.js
+    - keyword.operator.expression.void.ts
+    - keyword.operator.expression.void.js
+    settings:
+      foreground: *T9

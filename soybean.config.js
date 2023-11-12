@@ -71,6 +71,11 @@ export default Soybean({
                     h.fs.readFile('./src/{{filename}}', 'yamlFile', 'utf-8'),
                     h.update('yamlFile', data => yaml.load(data, { schema })),
 
+                    h.handle(e => {
+                        for (const key in e.yamlFile.colors) 
+                            if (!e.yamlFile.colors[key]) delete e.yamlFile.colors[key]
+                    }),
+
                     h.json.stringify('yamlFile', 'jsonFile', 4),
                     h.update('filename', name => name.split('.')[0] + '.json'),
                     

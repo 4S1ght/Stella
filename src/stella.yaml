@@ -4,9 +4,9 @@ stella:
 
   ui:
     - &BGDark           '#1B1B22'
-    - &BGLight          '#2b2c36'
-    - &BGBright         '#2f303a'
-    - &BGBrighter       '#3a3b46'
+    - &BGLight          '#272832'
+    - &BGBright         '#32333e'
+    - &BGBrighter       '#40414d'
     - &BGAccent         '#535665'
     - &BGDrop           '#939ed120'
     - &BGMain           '#ffbc88'
@@ -45,7 +45,6 @@ stella:
     - &T7               '#f5c676'
     - &T8               '#828892'
     - &T9               '#56B6C2'
-
 
   symbol:
     - &Sm               '#989db6'
@@ -123,7 +122,7 @@ colors:
   editor.findMatchHighlightBorder:      !a [*BGSecond, aa]      # Border color of the other search matches.
   editor.findRangeHighlightBorder:                              # Border color the range limiting the search (Enable 'Find in Selection' in the find widget).
   editor.hoverHighlightBackground:                              # Highlight below the word for which a hover is shown. The color must not be opaque so as not to hide underlying decorations.
-  editor.lineHighlightBackground:       *BGBright               # Background color for the highlight of line at the cursor position.
+  editor.lineHighlightBackground:       !a [*BGAccent, 28]      # Background color for the highlight of line at the cursor position.
   editor.lineHighlightBorder:           '#00000000'           # Background color for the border around the line at the cursor position.
   editorUnicodeHighlight.border:                                # Border color used to highlight unicode characters.
   editorUnicodeHighlight.background:                            # Background color used to highlight unicode characters.
@@ -336,8 +335,8 @@ colors:
   editorGhostText.background:                                               # Background color of the ghost text in the editor.
   editorGhostText.foreground:                                               # Foreground color of the ghost text shown by inline completion providers and the suggest preview.
   
-  editorStickyScroll.background:                   *BGLight                 # Editor sticky scroll background color.
-  editorStickyScrollHover.background:              *BGBrighter              # Editor sticky scroll on hover background color.
+  editorStickyScroll.background:                    *BGLight                # Editor sticky scroll background color.
+  editorStickyScrollHover.background:               *BGBrighter             # Editor sticky scroll on hover background color.
 
   # Git
   gitDecoration.addedResourceForeground:            *GitAdded               # Color for added Git resources. Used for file labels and the SCM viewlet.
@@ -608,6 +607,31 @@ tokenColors:
   - scope: meta.template.expression punctuation.definition
     settings:
       foreground: *T2
+    
+  # Escape/special characters
+  - scope: constant.character.escape
+    settings:
+      foreground: *T9
+  
+  # Colors
+  - scope: constant.other.color
+    settings:
+      foreground: *T9
+
+  # ============= Regex ============= #
+
+  # General rules
+  - scope: 
+    - punctuation.definition.character-class.regexp
+    - punctuation.definition.group.regexp
+    - string.regexp keyword.operator
+    settings:
+      foreground: *T9
+
+  # Quantifiers
+  - scope: keyword.operator.quantifier.regexp
+    settings:
+      foreground: *T6
 
   # ============= Operators ============= #
   
@@ -630,7 +654,7 @@ tokenColors:
 
   # Control keywords - import, from, return, if, await, etc...
   - scope: 
-    - keyword.control
+    - keyword
     - keyword.operator.new
     settings:
       foreground: *T3
@@ -640,6 +664,16 @@ tokenColors:
     settings:
       foreground: *T3
 
+  # ============= Functions ============= #
+
+  - scope: support.function
+    settings:
+      foreground: *T4
+
+  # Special methods
+  - scope: keyword.other.special-method
+    settings:
+      foreground: *T3
 
   # ============= Variables ============= #
 
@@ -647,6 +681,7 @@ tokenColors:
   - scope: 
     - variable
     - support.variable
+    - entity.name.tag
     settings:
       foreground: *T2
 
@@ -658,12 +693,24 @@ tokenColors:
   # Constants
   - scope: 
     - constant
-    - variable.other.constant
+    - support.constant
     settings:
       foreground: *T6
 
   # Parameters
   - scope: variable.parameter
+    settings:
+      foreground: *T1
+
+  # Aliases & anchors
+  - scope: 
+    - punctuation.definition.alias
+    - punctuation.definition.anchor
+    settings:
+      foreground: *T3
+
+  # Properties
+  - scope: support.type.property-name
     settings:
       foreground: *T1
 
@@ -676,16 +723,43 @@ tokenColors:
 
   # ============= Types ============= #
 
-  # Entity type
-  - scope: entity.name.type
+  # Entity types / classes
+  - scope: 
+    - entity.name.type
+    - entity.other.inherited-class
+    - support.class
     settings:
       foreground: *T7
 
-  # Entity type
+  # Type modules
+  - scope: entity.name.type.module
+    settings:
+      foreground: *T5
+
+  # Support types
   - scope: support.type
     settings:
       foreground: *T9
 
+  # Primitives
+  - scope: storage.type.primitive
+    settings:
+      foreground: *T3
+
+
+  # ============= Tags ============= #
+
+  # Tag names
+  - scope: entity.other.attribute-name
+    settings:
+      foreground: *T6
+  
+  # ============= Other ============= #
+
+  # Units
+  - scope: keyword.other.unit
+    settings:
+      foreground: *T6
 
   # ================================================== #
   #              LANGUAGE-SPECIFIC CONFIG              #
@@ -693,7 +767,7 @@ tokenColors:
 
   # ============= TypeScript / JavaScript ============= #
 
-  # Entity type
+  # Keyword operators
   - scope: 
     - keyword.operator.expression.typeof.ts
     - keyword.operator.expression.typeof.js
@@ -702,4 +776,205 @@ tokenColors:
     - keyword.operator.expression.void.ts
     - keyword.operator.expression.void.js
     settings:
+      foreground: *T9 
+
+  # Constants
+  - scope: variable.other.constant.js
+    settings:
+      foreground: *T6
+
+  # Object key definition
+  - scope: meta.object-literal.key.js
+    settings:
+      foreground: *T2
+      
+  # Variable read/write
+  - scope: variable.other.readwrite.js
+    settings:
+      foreground: *T1
+      
+  # Object variable
+  - scope: variable.other.object.js
+    settings:
+      foreground: *T1
+
+  # Variables inside blocks
+  - scope: meta.export.default.js variable.other.readwrite.js
+    settings:
+      foreground: *T2
+  
+  # ============= CSS ============= #
+
+  # Punctuation
+  - scope: punctuation.definition.constant.css
+    settings:
+      foreground: *T6
+
+  # Punctuation entities - &
+  - scope: punctuation.definition.entity.css
+    settings:
+      foreground: *T6
+
+  # Support constants
+  - scope: support.constant.property-value.css
+    settings:
+      foreground: *T1
+
+  # Variable punctuation
+  - scope: punctuation.definition.variable.css
+    settings:
+      foreground: *T2
+
+  # ============= Less ============= #
+
+  # Punctuation entities - &
+  - scope: punctuation.definition.entity.css
+    settings:
+      foreground: *T6
+
+  # Variable punctuation
+  - scope: punctuation.definition.variable.less
+    settings:
+      foreground: *T2
+
+  # ============= C# ============= #
+
+  # Object names / keys
+  - scope:
+    - variable.other.object.cs
+    - variable.other.object.property.cs
+    settings:
+      foreground: *T1
+
+  # Variable read/write
+  - scope: variable.other.readwrite.cs
+    settings:
+      foreground: *T1
+
+  # Field variable
+  - scope: entity.name.variable.field.cs
+    settings:
+      foreground: *T2
+
+  # ============= Go ============= #
+
+  # Functions
+  - scope: support.function
+    settings:
+      foreground: *T4
+
+  # ============= Java ============= #
+  
+  # Types
+  - scope: source.java storage.type
+    settings:
+      foreground: *T7
+
+  # ============= Json ============= #
+
+  # Property names
+  - scope: 
+    - support.type.property-name.json
+    - support.type.property-name.json punctuation
+    settings:
+      foreground: *T2
+
+  # Constants
+  - scope: constant.language.json
+    settings:
       foreground: *T9
+
+  # ============= Markdown ============= #
+
+  # Sections
+  - scope: 
+    - entity.name.section.markdown
+    - punctuation.definition.heading.markdown
+    settings:
+      foreground: *T2
+
+  # Links
+  - scope: 
+    - markup.underline.link.image.markdown
+    - markup.underline.link.markdown
+    - punctuation.definition.metadata.markdown
+    settings:
+      foreground: *T3
+
+  # Link descriptions & titles
+  - scope: 
+    - string.other.link.description.markdown
+    - string.other.link.title.markdown
+    settings:
+      foreground: *T4
+
+  # Bold string
+  - scope: 
+    - markup.bold
+    - punctuation.definition.bold.markdown
+    settings:
+      foreground: *T6
+
+  # Italic string
+  - scope: 
+    - markup.italic
+    - punctuation.definition.italic.markdown
+    settings:
+      foreground: *T3
+
+  # ============= PHP ============= #
+
+  # Variable definition punctuation
+  - scope: punctuation.definition.variable.php
+    settings:
+      foreground: *T2
+
+  # ============= Python ============= #
+
+  # Decorator punctuation
+  - scope: 
+    - punctuation.definition.decorator.python
+    - entity.name.function.decorator.python
+    - support.type.python
+    settings:
+      foreground: *T9
+
+  # Function calls
+  - scope: 
+    - meta.function-call.python
+    - support.function.builtin.python
+    settings:
+      foreground: *T4
+
+  # Function args
+  - scope: meta.function-call.arguments.python
+    settings:
+      foreground: *T1
+
+  # Keyword & operators
+  - scope: keyword.operator.logical.python
+    settings:
+      foreground: *T3
+
+  # ============= Ruby ============= #
+
+  # String template punctuation
+  - scope: punctuation.section.embedded.begin.ruby
+    settings:
+      foreground: *T2
+
+  # Global kernel methods
+  - scope: support.function.kernel.ruby
+    settings:
+      foreground: *T9
+
+  # Constants
+  - scope: variable.other.constant.ruby
+    settings:
+      foreground: *T6
+
+
+  
+
+
+  

@@ -4,7 +4,7 @@ stella:
 
   ui:
     - &BGDark           '#1B1B22'
-    - &BGLight          '#272832'
+    - &BGLight          '#23242c'
     - &BGBright         '#32333e'
     - &BGBrighter       '#40414d'
     - &BGAccent         '#535665'
@@ -53,6 +53,22 @@ stella:
     - &Sm-3             '#ffd68e'
 
   ansi:
+    - &ansiBlack         '#525252'
+    - &ansiBlue          '#5a76e4'
+    - &ansiBrightBlack   '#313131'
+    - &ansiBrightBlue    '#7b92f1'
+    - &ansiBrightCyan    '#5edfbb'
+    - &ansiBrightGreen   '#9fe56d'
+    - &ansiBrightMagenta '#df6cca'
+    - &ansiBrightRed     '#ff7373'
+    - &ansiBrightWhite   '#e4e4e4'
+    - &ansiBrightYellow  '#ffc663'
+    - &ansiCyan          '#34ba94'
+    - &ansiGreen         '#77ba47'
+    - &ansiMagenta       '#d046b7'
+    - &ansiRed           '#e13d31'
+    - &ansiWhite         '#c2c2c2'
+    - &ansiYellow        '#dda94f'
 
 colors:
 
@@ -450,22 +466,22 @@ colors:
   terminal.background:                                            # The background of the Integrated Terminal's viewport.
   terminal.border:                                                # The color of the border that separates split panes within the terminal. This defaults to panel.border.
   terminal.foreground:                                            # The default foreground color of the Integrated Terminal.
-  terminal.ansiBlack:                                             # 'Black' ANSI color in the terminal.
-  terminal.ansiBlue:                                              # 'Blue' ANSI color in the terminal.
-  terminal.ansiBrightBlack:                                       # 'BrightBlack' ANSI color in the terminal.
-  terminal.ansiBrightBlue:                                        # 'BrightBlue' ANSI color in the terminal.
-  terminal.ansiBrightCyan:                                        # 'BrightCyan' ANSI color in the terminal.
-  terminal.ansiBrightGreen:                                       # 'BrightGreen' ANSI color in the terminal.
-  terminal.ansiBrightMagenta:                                     # 'BrightMagenta' ANSI color in the terminal.
-  terminal.ansiBrightRed:                                         # 'BrightRed' ANSI color in the terminal.
-  terminal.ansiBrightWhite:                                       # 'BrightWhite' ANSI color in the terminal.
-  terminal.ansiBrightYellow:                                      # 'BrightYellow' ANSI color in the terminal.
-  terminal.ansiCyan:                                              # 'Cyan' ANSI color in the terminal.
-  terminal.ansiGreen:                                             # 'Green' ANSI color in the terminal.
-  terminal.ansiMagenta:                                           # 'Magenta' ANSI color in the terminal.
-  terminal.ansiRed:                                               # 'Red' ANSI color in the terminal.
-  terminal.ansiWhite:                                             # 'White' ANSI color in the terminal.
-  terminal.ansiYellow:                                            # 'Yellow' ANSI color in the terminal.
+  terminal.ansiBlack:               *ansiBlack                    # 'Black' ANSI color in the terminal.
+  terminal.ansiBlue:                *ansiBlue                     # 'Blue' ANSI color in the terminal.
+  terminal.ansiBrightBlack:         *ansiBrightBlack              # 'BrightBlack' ANSI color in the terminal.
+  terminal.ansiBrightBlue:          *ansiBrightBlue               # 'BrightBlue' ANSI color in the terminal.
+  terminal.ansiBrightCyan:          *ansiBrightCyan               # 'BrightCyan' ANSI color in the terminal.
+  terminal.ansiBrightGreen:         *ansiBrightGreen              # 'BrightGreen' ANSI color in the terminal.
+  terminal.ansiBrightMagenta:       *ansiBrightMagenta            # 'BrightMagenta' ANSI color in the terminal.
+  terminal.ansiBrightRed:           *ansiBrightRed                # 'BrightRed' ANSI color in the terminal.
+  terminal.ansiBrightWhite:         *ansiBrightWhite              # 'BrightWhite' ANSI color in the terminal.
+  terminal.ansiBrightYellow:        *ansiBrightYellow             # 'BrightYellow' ANSI color in the terminal.
+  terminal.ansiCyan:                *ansiCyan                     # 'Cyan' ANSI color in the terminal.
+  terminal.ansiGreen:               *ansiGreen                    # 'Green' ANSI color in the terminal.
+  terminal.ansiMagenta:             *ansiMagenta                  # 'Magenta' ANSI color in the terminal.
+  terminal.ansiRed:                 *ansiRed                      # 'Red' ANSI color in the terminal.
+  terminal.ansiWhite:               *ansiWhite                    # 'White' ANSI color in the terminal.
+  terminal.ansiYellow:              *ansiYellow                   # 'Yellow' ANSI color in the terminal.
   terminal.selectionBackground:                                   # The selection background color of the terminal.
   terminal.selectionForeground:                                   # The selection foreground color of the terminal. When this is null the selection foreground will be retained and have the minimum contrast ratio feature applied.
   terminal.inactiveSelectionBackground:                           # The selection background color of the terminal when it does not have focus.
@@ -600,6 +616,7 @@ tokenColors:
     - string
     - string.quoted.double punctuation
     - string.quoted.single punctuation
+    - punctuation.definition.string
     settings:
       foreground: *T5
 
@@ -615,6 +632,11 @@ tokenColors:
   
   # Colors
   - scope: constant.other.color
+    settings:
+      foreground: *T9
+
+  # Regexp
+  - scope: string.regexp
     settings:
       foreground: *T9
 
@@ -802,6 +824,14 @@ tokenColors:
   - scope: meta.export.default.js variable.other.readwrite.js
     settings:
       foreground: *T2
+
+  # Imports / exports
+  - scope: 
+    - support.type.object.module.js
+    - support.type.object.module.ts
+    settings:
+      foreground: *T2
+
   
   # ============= CSS ============= #
 
@@ -929,6 +959,13 @@ tokenColors:
     settings:
       foreground: *T2
 
+  # Embeds
+  - scope: 
+    - punctuation.section.embedded.begin.php
+    - punctuation.section.embedded.end.php
+    settings:
+      foreground: *T9
+
   # ============= Python ============= #
 
   # Decorator punctuation
@@ -972,6 +1009,27 @@ tokenColors:
   - scope: variable.other.constant.ruby
     settings:
       foreground: *T6
+
+  # ============= Rust ============= #
+
+  # Types
+  - scope: entity.name.type.rust
+    settings:
+      foreground: *T7
+  
+  # Primitive types
+  - scope: entity.name.type.primitive.rust
+    settings:
+      foreground: *T9
+
+  # ============= Rust ============= #
+
+  # TSX component prop definitions
+  # React.Component<{bar: string}
+  #                   ^  
+  - scope: meta.definition.property.tsx variable
+    settings:
+      foreground: *T1
 
 
   

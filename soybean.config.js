@@ -3,6 +3,7 @@ import { Soybean } from 'soybean'
 import h from 'soybean/handlers'
 import yaml from 'js-yaml'
 import https from 'https'
+import c from 'chalk'
 
 // ==================================================================
 
@@ -99,7 +100,7 @@ export default Soybean({
                             e.update('keys', k => k+1)
                         }
                     })),
-                    h.handle(e => console.log(`Missing keys: ${e.keys} (scope: ${lintScope || '?'})`))
+                    h.handle(e => console.log(`Missing keys: ${e.keys} (scope: ${lintScope || '?'})`)),
                 ])
             }
         ]
@@ -109,7 +110,21 @@ export default Soybean({
         keepHistory: 50,
         handlers: {
             scope: h.handle(e => { lintScope = e.argv[0] || "" }),
-            docs: h.shell.spawn(['open', docsPage])
+            docs: h.shell.spawn(['open', docsPage]),
+            colors: h.handle(e => {
+                const b = '   '
+                const t = 'Abc'
+                const c1 = `${c.black(t)}${c.whiteBright(t)}${c.greenBright(t)}${c.cyanBright(t)}${c.blueBright(t)}${c.magentaBright(t)}${c.redBright(t)}${c.yellowBright(t)}`
+                const c2 = `${c.gray(t)}${c.white(t)}${c.green(t)}${c.cyan(t)}${c.blue(t)}${c.magenta(t)}${c.red(t)}${c.yellow(t)}`
+                const c3 = `${c.bgBlack(b)}${c.bgWhiteBright(b)}${c.bgGreenBright(b)}${c.bgCyanBright(b)}${c.bgBlueBright(b)}${c.bgMagentaBright(b)}${c.bgRedBright(b)}${c.bgYellowBright(b)}`
+                const c4 = `${c.bgGray(b)}${c.bgWhite(b)}${c.bgGreen(b)}${c.bgCyan(b)}${c.bgBlue(b)}${c.bgMagenta(b)}${c.bgRed(b)}${c.bgYellow(b)}`
+                
+                console.log(c1)
+                console.log(c2)
+                console.log(c3)
+                console.log(c4)
+
+            })
         }
     }
 })

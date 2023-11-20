@@ -5,4 +5,5 @@
 soybean.config.js
 node_modules/
 src/
+samples/
 .DS_Store

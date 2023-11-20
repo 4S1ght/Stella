@@ -1,8 +1,8 @@
 {
     "name": "stella",
-    "displayName": "Stella Theme",
+    "displayName": "Stella One Theme",
     "description": "A warm-coloured minimalist VSCode theme.",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "author": "4S1ght",
     "publisher": "4S1ght",
     "license": "SEE LICENSE IN LICENSE.txt",
@@ -20,7 +20,7 @@
     "contributes": {
         "themes": [
             {
-                "label": "Stella",
+                "label": "Stella Dark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/stella.json"
             }

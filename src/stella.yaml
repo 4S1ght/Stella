@@ -12,8 +12,8 @@ stella:
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
-    - &FG               '#a3a0be'
-    - &FGLight          '#d0c4e0'
+    - &FG               '#a0a3be'
+    - &FGLight          '#c6c4e0'
     - &FGDark           '#101013'
 
   git:

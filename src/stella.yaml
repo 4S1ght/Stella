@@ -3,17 +3,17 @@ author: 4S1ght
 stella:
 
   ui:
-    - &BGDark           '#1B1B22'
-    - &BGLight          '#23242c'
-    - &BGBright         '#2d2e39'
-    - &BGBrighter       '#383944'
-    - &BGAccent         '#535665'
-    - &BGDrop           '#939ed120'
+    - &BGDark           '#19181b'
+    - &BGLight          '#212025'
+    - &BGBright         '#26252b'
+    - &BGBrighter       '#312f37'
+    - &BGAccent         '#514e5a'
+    - &BGDrop           '#524e5b20'
     - &BGMain           '#ffbc88'
     - &BGMainActive     '#ffd7a9'
     - &BGSecond         '#FF6461'
-    - &FG               '#a0a5be'
-    - &FGLight          '#d9deff'
+    - &FG               '#b1a0be'
+    - &FGLight          '#d2c4e0'
     - &FGDark           '#101013'
 
   git:
@@ -36,15 +36,15 @@ stella:
     - &Warn             '#FFAD6E'
   
     - &TComment         !a [*FG, 66]
-    - &T1               '#F6C28B'
-    - &T2               '#ee5f79'
-    - &T3               '#b65390'
-    - &T4               '#f0a17d'
-    - &T5               '#bdbb52'
-    - &T6               '#a4c484'
-    - &T7               '#56cda3'
+    - &T1               '#f6b98b'
+    - &T2               '#ee5f6d'
+    - &T3               '#b65379'
+    - &T4               '#f0947d'
+    - &T5               '#bdab52'
+    - &T6               '#b1c484'
+    - &T7               '#56cd8a'
     - &T8               !a [*FG, ff]
-    - &T9               '#fda354'
+    - &T9               '#fd9a54'
 
   symbol:
     - &Sm               '#989db6'

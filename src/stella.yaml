@@ -8,7 +8,7 @@ stella:
     - &BGBright         '#2b272b'
     - &BGBrighter       '#352f35'
     - &BGAccent         '#514751'
-    - &BGDrop           '#524e5b20'
+    - &BGDrop           '#5e5a682b'
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
@@ -297,7 +297,7 @@ colors:
 
   # Editor group
   editorGroup.border:                                           # Color to separate multiple editor groups from each other.
-  editorGroup.dropBackground:                                   # Background color when dragging editors around.
+  editorGroup.dropBackground:           *BGDrop                 # Background color when dragging editors around.
   editorGroupHeader.noTabsBackground:                           # Background color of the editor group title header when Tabs are disabled (set "workbench.editor.showTabs": false).
   editorGroupHeader.tabsBackground:     *BGDark                 # Background color of the Tabs container.
   editorGroupHeader.tabsBorder:                                 # Border color below the editor tabs control when tabs are enabled.
@@ -395,7 +395,7 @@ colors:
   list.activeSelectionBackground:           !a [*BGAccent, aa]    # List/Tree background color for the selected item when the list/tree is active.
   list.activeSelectionForeground:                                 # List/Tree foreground color for the selected item when the list/tree is active.
   list.activeSelectionIconForeground:                             # List/Tree icon foreground color for the selected item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not.
-  list.dropBackground:                                            # List/Tree drag and drop background when moving items around using the mouse.
+  list.dropBackground:                      *BGDrop               # List/Tree drag and drop background when moving items around using the mouse.
   list.focusBackground:                     !a [*BGAccent, 44]    # List/Tree background color for the focused item when the list/tree is active.
   list.focusForeground:                                           # List/Tree foreground color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not.
   list.focusHighlightForeground:                                  # List/Tree foreground color of the match highlights on actively focused items when searching inside the list/tree.
@@ -492,7 +492,7 @@ colors:
   terminal.hoverHighlightBackground:                              # Color of the highlight when hovering a link in the terminal.
   terminalCursor.background:                                      # The background color of the terminal cursor. Allows customizing the color of a character overlapped by a block cursor.
   terminalCursor.foreground:                                      # The foreground color of the terminal cursor.
-  terminal.dropBackground:                                        # The background color when dragging on top of terminals. The color should have transparency so that the terminal contents can still shine through.
+  terminal.dropBackground:                          *BGDrop       # The background color when dragging on top of terminals. The color should have transparency so that the terminal contents can still shine through.
   terminal.tab.activeBorder:                                      # Border on the side of the terminal tab in the panel. This defaults to tab.activeBorder.
   terminalCommandDecoration.defaultBackground:                    # The default terminal command decoration background color.
   terminalCommandDecoration.successBackground:                    # The terminal command decoration background color for successful commands.

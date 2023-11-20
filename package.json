@@ -4,6 +4,7 @@
     "description": "A warm-coloured minimalist VSCode theme.",
     "version": "0.0.1",
     "type": "module",
+    "icon": "./images/stella-logo.png",
     "scripts": {
         "dev": "soybean run ."
     },

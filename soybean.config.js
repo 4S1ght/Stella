@@ -59,7 +59,7 @@ const getDocsKeys = async e => {
 
     docsKeys = [...matches]
         .map(key => key.replace(/<code>|<\/code>|<\/li>/g, ''))
-        .filter(key => key.includes(': '))             // Remove if doesn't contain ": "
+        .filter(key => key.includes(': '))                       // Remove if doesn't contain ": "
         .map(key => key.split(': '))
         .filter(([key, desc]) => !/ /.test(key))                 // Remove if contains spaces
         .filter(([key, desc]) => !/#.../.test(key))              // Remove if is a hex color

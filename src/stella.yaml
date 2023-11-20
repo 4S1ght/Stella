@@ -3,12 +3,12 @@ author: 4S1ght
 stella:
 
   ui:
-    - &BGDark           '#1b181b'
-    - &BGLight          '#252125'
-    - &BGBright         '#2b272b'
-    - &BGBrighter       '#352f35'
-    - &BGAccent         '#514751'
-    - &BGDrop           '#5e5a682b'
+    - &BGDark           '#19181b'
+    - &BGLight          '#242327'
+    - &BGBright         '#2e2d32'
+    - &BGBrighter       '#3a3940'
+    - &BGAccent         '#504d58'
+    - &BGDrop           '#7e798a2b'
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
@@ -35,16 +35,16 @@ stella:
     - &Error            '#FF6461'
     - &Warn             '#FFAD6E'
   
-    - &TComment         !a [*FG, 88]
-    - &T1               '#ffbf84'
-    - &T2               '#fa6776'
+    - &TComment         !mix [*BGLight, *FG, 0.5]
+    - &T1               '#a5a5a5'
+    - &T2               '#dc626e'
     - &T3               '#b74d76'
-    - &T4               '#ed9961'
-    - &T5               '#b9ce5c'
+    - &T4               '#c99775'
+    - &T5               '#95b768'
     - &T6               '#76c095'
-    - &T7               '#619be1'
+    - &T7               '#6393e7'
     - &T8               !a [*FG, ff]
-    - &T9               '#6a7bff'
+    - &T9               '#56B6C2'
 
   symbol:
     - &Sm               '#989db6'

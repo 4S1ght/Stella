@@ -9,11 +9,11 @@ stella:
     - &BGBrighter       '#312f37'
     - &BGAccent         '#514e5a'
     - &BGDrop           '#524e5b20'
-    - &BGMain           '#ffbc88'
-    - &BGMainActive     '#ffd7a9'
+    - &BGMain           '#e3975d'
+    - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
-    - &FG               '#b1a0be'
-    - &FGLight          '#d2c4e0'
+    - &FG               '#a3a0be'
+    - &FGLight          '#d0c4e0'
     - &FGDark           '#101013'
 
   git:
@@ -36,15 +36,15 @@ stella:
     - &Warn             '#FFAD6E'
   
     - &TComment         !a [*FG, 66]
-    - &T1               '#f6b98b'
-    - &T2               '#ee5f6d'
-    - &T3               '#b65379'
-    - &T4               '#f0947d'
-    - &T5               '#bdab52'
-    - &T6               '#b1c484'
-    - &T7               '#56cd8a'
+    - &T1               '#ffc894'
+    - &T2               '#fa6776'
+    - &T3               '#b74d76'
+    - &T4               '#ed9d67'
+    - &T5               '#d0bc55'
+    - &T6               '#7397ce'
+    - &T7               '#76c095'
     - &T8               !a [*FG, ff]
-    - &T9               '#fd9a54'
+    - &T9               '#7b7bff'
 
   symbol:
     - &Sm               '#989db6'

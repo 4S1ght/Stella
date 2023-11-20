@@ -5,8 +5,8 @@ stella:
   ui:
     - &BGDark           '#1B1B22'
     - &BGLight          '#23242c'
-    - &BGBright         '#32333e'
-    - &BGBrighter       '#40414d'
+    - &BGBright         '#2d2e39'
+    - &BGBrighter       '#383944'
     - &BGAccent         '#535665'
     - &BGDrop           '#939ed120'
     - &BGMain           '#ffbc88'
@@ -36,20 +36,20 @@ stella:
     - &Warn             '#FFAD6E'
   
     - &TComment         !a [*FG, 66]
-    - &T1               '#abb2bf'
-    - &T2               '#de6a73'
-    - &T3               '#c678dd'
-    - &T4               '#61afef'
-    - &T5               '#98c379'
-    - &T6               '#d19a66'
-    - &T7               '#f5c676'
-    - &T8               '#828892'
-    - &T9               '#56B6C2'
+    - &T1               '#F6C28B'
+    - &T2               '#ee5f79'
+    - &T3               '#b65390'
+    - &T4               '#f0a17d'
+    - &T5               '#bdbb52'
+    - &T6               '#a4c484'
+    - &T7               '#56cda3'
+    - &T8               !a [*FG, ff]
+    - &T9               '#fda354'
 
   symbol:
     - &Sm               '#989db6'
-    - &Sm-1             '#CC4967' 
-    - &Sm-2             '#FFAD6E' 
+    - &Sm-1             '#ff7373'
+    - &Sm-2             '#71a0ff'
     - &Sm-3             '#ffd68e'
 
   ansi:
@@ -628,7 +628,7 @@ tokenColors:
   # Escape/special characters
   - scope: constant.character.escape
     settings:
-      foreground: *T9
+      foreground: *T6
   
   # Colors
   - scope: constant.other.color
@@ -636,7 +636,13 @@ tokenColors:
       foreground: *T9
 
   # Regexp
-  - scope: string.regexp
+  - scope: 
+    - string.regexp
+    - string.regexp constant.other.character-class.regexp
+    - string.regexp constant.character.escape.backslash.regexp
+    - string.regexp constant.other.character-class.set.regexp
+    - string.regexp keyword.operator.quantifier.regexp
+    - string.regexp keyword.control.anchor.regexp
     settings:
       foreground: *T9
 
@@ -716,6 +722,7 @@ tokenColors:
   - scope: 
     - constant
     - support.constant
+    - variable.other.constant.property
     settings:
       foreground: *T6
 
@@ -801,27 +808,37 @@ tokenColors:
       foreground: *T9 
 
   # Constants
-  - scope: variable.other.constant.js
+  - scope: 
+    - variable.other.constant.js
+    - variable.other.constant.ts
     settings:
       foreground: *T6
 
   # Object key definition
-  - scope: meta.object-literal.key.js
+  - scope: 
+    - meta.object-literal.key.js
+    - meta.object-literal.key.ts
     settings:
       foreground: *T2
       
   # Variable read/write
-  - scope: variable.other.readwrite.js
+  - scope: 
+    - variable.other.readwrite.js
+    - variable.other.readwrite.ts
     settings:
       foreground: *T1
       
   # Object variable
-  - scope: variable.other.object.js
+  - scope: 
+    - variable.other.object.js
+    - variable.other.object.ts
     settings:
       foreground: *T1
 
   # Variables inside blocks
-  - scope: meta.export.default.js variable.other.readwrite.js
+  - scope: 
+    - meta.export.default.js variable.other.readwrite.js
+    - meta.export.default.ts variable.other.readwrite.ts
     settings:
       foreground: *T2
 
@@ -832,6 +849,21 @@ tokenColors:
     settings:
       foreground: *T2
 
+  # Regexp
+  - scope: 
+    - string.regexp.js punctuation.definition.string
+    - string.regexp.ts punctuation.definition.string
+    settings:
+      foreground: *T9
+
+  # String template embedded functions
+  - scope: 
+    - meta.template.expression.js meta.brace.round
+    - meta.template.expression.ts meta.brace.round
+    - meta.template.expression.js variable.other.object.js
+    - meta.template.expression.ts variable.other.object.ts
+    settings:
+      foreground: *T4
   
   # ============= CSS ============= #
 
@@ -855,17 +887,26 @@ tokenColors:
     settings:
       foreground: *T2
 
-  # ============= Less ============= #
-
   # Punctuation entities - &
   - scope: punctuation.definition.entity.css
     settings:
       foreground: *T6
 
+  # Colors
+  - scope: constant.other.color
+    settings:
+      foreground: *T6
+
+  # ============= Less ============= #
+
   # Variable punctuation
   - scope: punctuation.definition.variable.less
     settings:
       foreground: *T2
+
+  - scope: punctuation.definition.keyword.less
+    settings:
+      foreground: *T3
 
   # ============= C# ============= #
 
@@ -885,6 +926,11 @@ tokenColors:
   - scope: entity.name.variable.field.cs
     settings:
       foreground: *T2
+  
+  # Imports, namespaces
+  - scope: entity.name.type.namespace.cs
+    settings:
+      foreground: *T1
 
   # ============= Go ============= #
 
@@ -996,7 +1042,10 @@ tokenColors:
   # ============= Ruby ============= #
 
   # String template punctuation
-  - scope: punctuation.section.embedded.begin.ruby
+  - scope: 
+    - punctuation.section.embedded.begin.ruby
+    - punctuation.section.embedded.end.ruby
+    - meta.embedded.line.ruby
     settings:
       foreground: *T2
 
@@ -1009,6 +1058,14 @@ tokenColors:
   - scope: variable.other.constant.ruby
     settings:
       foreground: *T6
+
+  # Regexp
+  - scope: 
+    - string.regexp.classic.ruby
+    - punctuation.definition.string.ruby
+    - punctuation.section.regexp.ruby
+    settings:
+      foreground: *T9
 
   # ============= Rust ============= #
 
@@ -1030,6 +1087,24 @@ tokenColors:
   - scope: meta.definition.property.tsx variable
     settings:
       foreground: *T1
+
+  # ============= Yaml ============= #
+
+  # Alias and anchor punctuation 
+  # &Anchor *Alias
+  # ^       ^
+  - scope: 
+    - punctuation.definition.alias.yaml
+    - punctuation.definition.anchor.yaml
+    settings:
+      foreground: *T1
+
+  # Alias and anchor colors 
+  - scope: 
+    - entity.name.type.anchor.yaml
+    - variable.other.alias.yaml
+    settings:
+      foreground: *T4
 
 
   

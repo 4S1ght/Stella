@@ -3,11 +3,11 @@ author: 4S1ght
 stella:
 
   ui:
-    - &BGDark           '#19181b'
-    - &BGLight          '#212025'
-    - &BGBright         '#26252b'
-    - &BGBrighter       '#312f37'
-    - &BGAccent         '#514e5a'
+    - &BGDark           '#1b181b'
+    - &BGLight          '#252125'
+    - &BGBright         '#2b272b'
+    - &BGBrighter       '#352f35'
+    - &BGAccent         '#514751'
     - &BGDrop           '#524e5b20'
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
@@ -35,39 +35,39 @@ stella:
     - &Error            '#FF6461'
     - &Warn             '#FFAD6E'
   
-    - &TComment         !a [*FG, 66]
-    - &T1               '#ffc894'
+    - &TComment         !a [*FG, 88]
+    - &T1               '#ffbf84'
     - &T2               '#fa6776'
     - &T3               '#b74d76'
-    - &T4               '#ed9d67'
-    - &T5               '#d0bc55'
-    - &T6               '#7397ce'
-    - &T7               '#76c095'
+    - &T4               '#ed9961'
+    - &T5               '#b9ce5c'
+    - &T6               '#76c095'
+    - &T7               '#619be1'
     - &T8               !a [*FG, ff]
-    - &T9               '#7b7bff'
+    - &T9               '#6a7bff'
 
   symbol:
     - &Sm               '#989db6'
-    - &Sm-1             '#ff7373'
+    - &Sm-1             '#f19355'
     - &Sm-2             '#71a0ff'
     - &Sm-3             '#ffd68e'
 
   ansi:
-    - &ansiBlack         '#525252'
-    - &ansiBlue          '#5a76e4'
-    - &ansiBrightBlack   '#313131'
-    - &ansiBrightBlue    '#7b92f1'
-    - &ansiBrightCyan    '#5edfbb'
-    - &ansiBrightGreen   '#9fe56d'
-    - &ansiBrightMagenta '#df6cca'
-    - &ansiBrightRed     '#ff7373'
+    - &ansiBrightBlack   '#5b5b5b'
+    - &ansiBlack         '#3a3a3a'
     - &ansiBrightWhite   '#e4e4e4'
-    - &ansiBrightYellow  '#ffc663'
-    - &ansiCyan          '#34ba94'
-    - &ansiGreen         '#77ba47'
-    - &ansiMagenta       '#d046b7'
+    - &ansiWhite         '#bababa'
+    - &ansiBrightGreen   '#9fe56d'
+    - &ansiGreen         '#6daf3d'
+    - &ansiBrightCyan    '#5edfbb'
+    - &ansiCyan          '#29b58d'
+    - &ansiBrightBlue    '#9097ff'
+    - &ansiBlue          '#515dfe'
+    - &ansiBrightMagenta '#df6cca'
+    - &ansiMagenta       '#cf3bb4'
+    - &ansiBrightRed     '#ff7373'
     - &ansiRed           '#e13d31'
-    - &ansiWhite         '#c2c2c2'
+    - &ansiBrightYellow  '#ffcb71'
     - &ansiYellow        '#dda94f'
 
 colors:
@@ -501,18 +501,18 @@ colors:
   terminalOverviewRuler.findMatchForeground:                      # Overview ruler marker color for find matches in the terminal.
   
   # Panels
-  panel.background:                   *BGLight                    # Panel background color.
-  panel.border:                       !a [*BGAccent, 55]          # Panel border color to separate the panel from the editor.
-  panel.dropBorder:                   *BGMain                     # Drag and drop feedback color for the panel titles. Panels are shown below the editor area and contain views like output and integrated terminal.
-  panelTitle.activeBorder:            !a [*BGAccent, 88]          # Border color for the active panel title.
-  panelTitle.activeForeground:        *FG                         # Title color for the active panel.
-  panelTitle.inactiveForeground:      !a [*FG, 88]                # Title color for the inactive panel.
-  panelInput.border:                  !a [*BGAccent, 44]          # Input box border for inputs in the panel.
-  panelSection.border:                                            # Panel section border color used when multiple views are stacked horizontally in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
-  panelSection.dropBackground:        *BGDrop                     # Drag and drop feedback color for the panel sections. The color should have transparency so that the panel sections can still shine through. Panels are shown below the editor area and contain views like output and integrated terminal.
-  panelSectionHeader.background:                                  # Panel section header background color. Panels are shown below the editor area and contain views like output and integrated terminal.
-  panelSectionHeader.foreground:                                  # Panel section header foreground color. Panels are shown below the editor area and contain views like output and integrated terminal.
-  panelSectionHeader.border:                                      # Panel section header border color used when multiple views are stacked vertically in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panel.background:                   !mix [*BGDark, *BGLight, 0.4]   # Panel background color.
+  panel.border:                       !a [*BGAccent, 55]              # Panel border color to separate the panel from the editor.
+  panel.dropBorder:                   *BGMain                         # Drag and drop feedback color for the panel titles. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panelTitle.activeBorder:            !a [*BGAccent, 88]              # Border color for the active panel title.
+  panelTitle.activeForeground:        *FG                             # Title color for the active panel.
+  panelTitle.inactiveForeground:      !a [*FG, 88]                    # Title color for the inactive panel.
+  panelInput.border:                  !a [*BGAccent, 44]              # Input box border for inputs in the panel.
+  panelSection.border:                                                # Panel section border color used when multiple views are stacked horizontally in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panelSection.dropBackground:        *BGDrop                         # Drag and drop feedback color for the panel sections. The color should have transparency so that the panel sections can still shine through. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panelSectionHeader.background:                                      # Panel section header background color. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panelSectionHeader.foreground:                                      # Panel section header foreground color. Panels are shown below the editor area and contain views like output and integrated terminal.
+  panelSectionHeader.border:                                          # Panel section header border color used when multiple views are stacked vertically in the panel. Panels are shown below the editor area and contain views like output and integrated terminal.
 
   # Notifications
   notifications.foreground:                 *FG                   # Notification foreground color.
@@ -628,7 +628,7 @@ tokenColors:
   # Escape/special characters
   - scope: constant.character.escape
     settings:
-      foreground: *T6
+      foreground: *T7
   
   # Colors
   - scope: constant.other.color
@@ -1067,6 +1067,16 @@ tokenColors:
     settings:
       foreground: *T9
 
+  # Hashkeys
+  - scope: constant.language.symbol.hashkey.ruby
+    settings:
+      foreground: *T2
+
+  # Symbols
+  - scope: constant.language.symbol.ruby
+    settings:
+      foreground: *T1
+
   # ============= Rust ============= #
 
   # Types
@@ -1079,7 +1089,7 @@ tokenColors:
     settings:
       foreground: *T9
 
-  # ============= Rust ============= #
+  # ============= TSX ============= #
 
   # TSX component prop definitions
   # React.Component<{bar: string}

@@ -1,6 +1,5 @@
 
-import { Soybean } from 'soybean'
-import h from 'soybean/handlers'
+import { Soybean, handlers as h } from 'soybean'
 import yaml from 'js-yaml'
 import https from 'https'
 import c from 'chalk'
@@ -11,11 +10,29 @@ const docsPage = 'https://code.visualstudio.com/api/references/theme-color'
 let docsKeys
 let lintScope = ""
 
+const mixHexCodes = (p, c1, c2) => {
+    c1 = c1.replace('#', '').match(/.{1,2}/g)
+    c2 = c2.replace('#', '').match(/.{1,2}/g)
+    let c3 = '#'
+    for (let i = 0; i < c1.length; i++) {
+        const h1 = parseInt(c1[i], 16)
+        const h2 = parseInt(c2[i], 16)
+        console.log(h1, h2)
+        c3 += parseInt(h1 + ((h2 - h1) * p)).toString(16)
+    }
+    return c3
+}
+
 const schema = new yaml.DEFAULT_SCHEMA.extend([
     new yaml.Type('!a', {
         kind: 'sequence',
         construct: ([hexRGB, alpha]) => hexRGB + alpha,
         represent: ([hexRGB, alpha]) => hexRGB + alpha,
+    }),
+    new yaml.Type('!mix', {
+        kind: 'sequence',
+        construct: ([h1, h2, p]) => mixHexCodes(p, h1, h2),
+        represent: ([h1, h2, p]) => mixHexCodes(p, h1, h2),
     })
 ])
 
@@ -114,10 +131,10 @@ export default Soybean({
             colors: h.handle(e => {
                 const b = '   '
                 const t = 'Abc'
-                const c1 = `${c.black(t)}${c.whiteBright(t)}${c.greenBright(t)}${c.cyanBright(t)}${c.blueBright(t)}${c.magentaBright(t)}${c.redBright(t)}${c.yellowBright(t)}`
-                const c2 = `${c.gray(t)}${c.white(t)}${c.green(t)}${c.cyan(t)}${c.blue(t)}${c.magenta(t)}${c.red(t)}${c.yellow(t)}`
-                const c3 = `${c.bgBlack(b)}${c.bgWhiteBright(b)}${c.bgGreenBright(b)}${c.bgCyanBright(b)}${c.bgBlueBright(b)}${c.bgMagentaBright(b)}${c.bgRedBright(b)}${c.bgYellowBright(b)}`
-                const c4 = `${c.bgGray(b)}${c.bgWhite(b)}${c.bgGreen(b)}${c.bgCyan(b)}${c.bgBlue(b)}${c.bgMagenta(b)}${c.bgRed(b)}${c.bgYellow(b)}`
+                const c1 = `${c.gray(t)}${c.whiteBright(t)}${c.greenBright(t)}${c.cyanBright(t)}${c.blueBright(t)}${c.magentaBright(t)}${c.redBright(t)}${c.yellowBright(t)}`
+                const c2 = `${c.black(t)}${c.white(t)}${c.green(t)}${c.cyan(t)}${c.blue(t)}${c.magenta(t)}${c.red(t)}${c.yellow(t)}`
+                const c3 = `${c.bgGray(b)}${c.bgWhiteBright(b)}${c.bgGreenBright(b)}${c.bgCyanBright(b)}${c.bgBlueBright(b)}${c.bgMagentaBright(b)}${c.bgRedBright(b)}${c.bgYellowBright(b)}`
+                const c4 = `${c.bgBlack(b)}${c.bgWhite(b)}${c.bgGreen(b)}${c.bgCyan(b)}${c.bgBlue(b)}${c.bgMagenta(b)}${c.bgRed(b)}${c.bgYellow(b)}`
                 
                 console.log(c1)
                 console.log(c2)

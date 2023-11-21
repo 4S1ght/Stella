@@ -4,7 +4,7 @@ stella:
 
   ui:
     - &BGDark           '#19181b'
-    - &BGLight          '#242327'
+    - &BGLight          '#222124'
     - &BGBright         '#2e2d32'
     - &BGBrighter       '#3a3940'
     - &BGAccent         '#504d58'
@@ -17,7 +17,7 @@ stella:
     - &FGDark           '#101013'
 
   git:
-    - &GitIgnored       !a [*FG, 55]
+    - &GitIgnored       !a [*FG, 66]
     - &GitAdded         '#a6abc8'
     - &GitUntracked     '#a6abc8'
     - &GitModified      '#a3887d'
@@ -36,12 +36,12 @@ stella:
     - &Warn             '#FFAD6E'
   
     - &TComment         !mix [*BGLight, *FG, 0.5]
-    - &T1               '#a5a5a5'
+    - &T1               '#aeaaa4'
     - &T2               '#dc626e'
     - &T3               '#b74d76'
-    - &T4               '#c99775'
+    - &T4               '#d29871'
     - &T5               '#95b768'
-    - &T6               '#76c095'
+    - &T6               '#59b981'
     - &T7               '#6393e7'
     - &T8               !a [*FG, ff]
     - &T9               '#56B6C2'
@@ -53,20 +53,20 @@ stella:
     - &Sm-3             '#ffd68e'
 
   ansi:
-    - &ansiBrightBlack   '#5b5b5b'
-    - &ansiBlack         '#3a3a3a'
-    - &ansiBrightWhite   '#e4e4e4'
-    - &ansiWhite         '#bababa'
-    - &ansiBrightGreen   '#9fe56d'
-    - &ansiGreen         '#6daf3d'
-    - &ansiBrightCyan    '#5edfbb'
-    - &ansiCyan          '#29b58d'
-    - &ansiBrightBlue    '#9097ff'
-    - &ansiBlue          '#515dfe'
+    - &ansiBrightBlack   '#6a665e'
+    - &ansiBlack         '#3f3c37'
+    - &ansiBrightWhite   '#f1eadd'
+    - &ansiWhite         '#c4bcaf'
+    - &ansiBrightGreen   '#a6f170'
+    - &ansiGreen         '#73b941'
+    - &ansiBrightCyan    '#60e7c1'
+    - &ansiCyan          '#23b68c'
+    - &ansiBrightBlue    '#90c6ff'
+    - &ansiBlue          '#449af6'
     - &ansiBrightMagenta '#df6cca'
-    - &ansiMagenta       '#cf3bb4'
-    - &ansiBrightRed     '#ff7373'
-    - &ansiRed           '#e13d31'
+    - &ansiMagenta       '#c428a8'
+    - &ansiBrightRed     '#ff7f7f'
+    - &ansiRed           '#d53a2f'
     - &ansiBrightYellow  '#ffcb71'
     - &ansiYellow        '#dda94f'
 
@@ -109,7 +109,7 @@ colors:
 
   # Sidebar
   sideBar.background:                   *BGDark                 # Side Bar background color.
-  sideBar.foreground:                   !a [*FG, 99]            # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.
+  sideBar.foreground:                   !a [*FG, aa]            # Side Bar foreground color. The Side Bar is the container for views like Explorer and Search.
   sideBar.border:                                               # Side Bar border color on the side separating the editor.
   sideBar.dropBackground:               *BGDrop                 # Drag and drop feedback color for the side bar sections. The color should have transparency so that the side bar sections can still shine through.
   sideBarTitle.foreground:              !a [*FG, 88]            # Side Bar title foreground color.
@@ -465,7 +465,7 @@ colors:
   # Terminal
   terminal.background:                                            # The background of the Integrated Terminal's viewport.
   terminal.border:                                                # The color of the border that separates split panes within the terminal. This defaults to panel.border.
-  terminal.foreground:                                            # The default foreground color of the Integrated Terminal.
+  terminal.foreground:              *ansiWhite                    # The default foreground color of the Integrated Terminal.
   terminal.ansiBlack:               *ansiBlack                    # 'Black' ANSI color in the terminal.
   terminal.ansiBlue:                *ansiBlue                     # 'Blue' ANSI color in the terminal.
   terminal.ansiBrightBlack:         *ansiBrightBlack              # 'BrightBlack' ANSI color in the terminal.

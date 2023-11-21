@@ -12,8 +12,8 @@ stella:
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
-    - &FG               '#a0a3be'
-    - &FGLight          '#c6c4e0'
+    - &FG               '#acadb7'
+    - &FGLight          '#c6c5cf'
     - &FGDark           '#101013'
 
   git:
@@ -36,15 +36,19 @@ stella:
     - &Warn             '#FFAD6E'
   
     - &TComment         !mix [*BGLight, *FG, 0.5]
-    - &T1               '#aeaaa4'
-    - &T2               '#dc626e'
-    - &T3               '#b74d76'
-    - &T4               '#d29871'
-    - &T5               '#95b768'
-    - &T6               '#59b981'
-    - &T7               '#6393e7'
-    - &T8               !a [*FG, ff]
+    - &T1               '#a09891'
+    - &T2               '#df5764'
+    - &T3               '#c84778'
+    - &T4               '#dc8357'
+    - &T5               '#9ebb4e'
+    - &T6               '#ebb164'
+    - &T7               '#5ba2f4'
+    - &T8               !v [*T1]
     - &T9               '#56B6C2'
+
+    - &B1               '#ebb164'
+    - &B2               '#df5764'
+    - &B3               '#56B6C2' 
 
   symbol:
     - &Sm               '#989db6'
@@ -177,12 +181,12 @@ colors:
   editorLightBulbAutoFix.foreground:                            # The color used for the lightbulb auto fix actions icon.
   editorBracketMatch.background:                                # Background color behind matching brackets.
   editorBracketMatch.border:                                    # Color for matching brackets boxes.
-  editorBracketHighlight.foreground1:                           # Foreground color of brackets (1). Requires enabling bracket pair colorization.
-  editorBracketHighlight.foreground2:                           # Foreground color of brackets (2). Requires enabling bracket pair colorization.
-  editorBracketHighlight.foreground3:                           # Foreground color of brackets (3). Requires enabling bracket pair colorization.
-  editorBracketHighlight.foreground4:                           # Foreground color of brackets (4). Requires enabling bracket pair colorization.
-  editorBracketHighlight.foreground5:                           # Foreground color of brackets (5). Requires enabling bracket pair colorization.
-  editorBracketHighlight.foreground6:                           # Foreground color of brackets (6). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground1:             *B1           # Foreground color of brackets (1). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground2:             *B2           # Foreground color of brackets (2). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground3:             *B3           # Foreground color of brackets (3). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground4:             *B1           # Foreground color of brackets (4). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground5:             *B2           # Foreground color of brackets (5). Requires enabling bracket pair colorization.
+  editorBracketHighlight.foreground6:             *B3           # Foreground color of brackets (6). Requires enabling bracket pair colorization.
   editorBracketHighlight.unexpectedBracket.foreground:          # Foreground color of unexpected brackets.
   editor.foldBackground:                                        # Background color for folded ranges. The color must not be opaque so as not to hide underlying decorations.
   
@@ -310,7 +314,7 @@ colors:
 
   # Editor
   editor.background:                                *BGLight                # Editor background color.
-  editor.foreground:                                *FG                     # Editor default foreground color.
+  editor.foreground:                                *T1                     # Editor default foreground color.
   editorLineNumber.foreground:                      !a [*FG, 55]            # Color of editor line numbers.
   editorLineNumber.activeForeground:                *FG                     # Color of the active editor line number.
   editorLineNumber.dimmedForeground:                !a [*FG, 33]            # Color of the final editor line when editor.renderFinalNewline is set to dimmed.
@@ -628,7 +632,7 @@ tokenColors:
   # Escape/special characters
   - scope: constant.character.escape
     settings:
-      foreground: *T7
+      foreground: *T9
   
   # Colors
   - scope: constant.other.color

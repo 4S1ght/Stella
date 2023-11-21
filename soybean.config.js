@@ -33,8 +33,14 @@ const schema = new yaml.DEFAULT_SCHEMA.extend([
         kind: 'sequence',
         construct: ([h1, h2, p]) => mixHexCodes(p, h1, h2),
         represent: ([h1, h2, p]) => mixHexCodes(p, h1, h2),
+    }),
+    new yaml.Type('!v', {
+        kind: 'sequence',
+        construct: ([v]) => v,
+        represent: ([v]) => v,
     })
 ])
+
 
 const getDocsKeys = async e => {
 

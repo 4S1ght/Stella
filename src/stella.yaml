@@ -12,16 +12,16 @@ stella:
     - &BGMain           '#e3975d'
     - &BGMainActive     '#eaa875'
     - &BGSecond         '#FF6461'
-    - &FG               '#acadb7'
-    - &FGLight          '#c6c5cf'
+    - &FG               '#b1acb7'
+    - &FGLight          '#b3acb7'
     - &FGDark           '#101013'
 
   git:
     - &GitIgnored       !a [*FG, 66]
-    - &GitAdded         '#a6abc8'
-    - &GitUntracked     '#a6abc8'
-    - &GitModified      '#a3887d'
-    - &GitStageModified '#a3887d'
+    - &GitAdded         '#96ab4f'
+    - &GitUntracked     '#96ab4f'
+    - &GitModified      '#a18073'
+    - &GitStageModified '#a18073'
     - &GitConflict      '#FF6461'
     - &GitDeleted       '#FF6461'
     - &GitStageDeleted  '#ff3b38'

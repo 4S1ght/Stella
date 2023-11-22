@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.2.1]
+- Changed git added/untracked color from `#a6abc8` (Cool gray) to `#96ab4f` (Olivine)
+- Deepened the shade of git modified color.
+- Changed foreground color shade to a warmer tint.
+
 ## [1.2.0]
 - Partial editor colorization token color changes:
     - Improved color contrast (deepened token color shades)
@@ -19,5 +24,4 @@ All notable changes to the extension are be documented in this file.
 - Improved legibility of the integrated terminal ANSI colors.
 
 ## [1.0.0]
-
 - Initial release

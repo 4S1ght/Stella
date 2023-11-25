@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.2.2]
+- Improved keyword legibility.
+
 ## [1.2.1]
 - Changed git added/untracked color from `#a6abc8` (Cool gray) to `#96ab4f` (Olivine)
 - Deepened the shade of git modified color.

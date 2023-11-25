@@ -1,13 +1,12 @@
 # Stella
 Stella is a warm-coloured VSCode theme designed to look sharp both mid-day and 
 on late nights with blue light filters, Night Shift and True Tone doing their job.
+It's designed in a way that lets you use a less aggressive blue light filter to 
+achieve the same results while retaining good contrast.
 
 ![Thumbnail](https://raw.githubusercontent.com/4S1ght/Stella/main/images/thumbnail-1.png)
 
 <p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=4S1ght.stella">
-       <img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/4S1ght.stella? label=Visual%20Studio%20Marketplace" />
-    </a>
     <a href="https://marketplace.visualstudio.com/items?itemName=4S1ght.stella">
         <img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/4S1ght.stella" />
     </a>
@@ -16,6 +15,14 @@ on late nights with blue light filters, Night Shift and True Tone doing their jo
     </a>
     <a href="https://marketplace.visualstudio.com/items?itemName=4S1ght.stella">
         <img alt="Visual Studio Marketplace Rating" src="https://img.shields.io/visual-studio-marketplace/r/4S1ght.stella">
+    </a>
+</p>
+<p align="center">
+    <a href="https://marketplace.visualstudio.com/items?itemName=4S1ght.stella">
+       <img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/last-updated/4S1ght.stella" />
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=4S1ght.stella">
+       <img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/4S1ght.stella?label=Visual%20Studio%20Marketplace" />
     </a>
 </p>
 

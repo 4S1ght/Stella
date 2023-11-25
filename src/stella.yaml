@@ -38,7 +38,7 @@ stella:
     - &TComment         !mix [*BGLight, *FG, 0.5]
     - &T1               '#a09891'
     - &T2               '#df5764'
-    - &T3               '#c84778'
+    - &T3               '#da4e84'
     - &T4               '#dc8357'
     - &T5               '#9ebb4e'
     - &T6               '#ebb164'

@@ -35,7 +35,7 @@ stella:
     - &Error            '#FF6461'
     - &Warn             '#FFAD6E'
   
-    - &TComment         !mix [*BGLight, *FG, 0.5]
+    - &TComment         !mix [*BGLight, *FG, 0.55]
     - &T1               '#a09891'
     - &T2               '#df5764'
     - &T3               '#da4e84'

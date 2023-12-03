@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.2.3]
+- Improved comment foreground to background contrast by 10% for legibility.
+
 ## [1.2.2]
 - Improved keyword legibility.
 

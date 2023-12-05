@@ -868,7 +868,16 @@ tokenColors:
     - meta.template.expression.ts variable.other.object.ts
     settings:
       foreground: *T4
-  
+
+  # Bigint notation, eg 12345n<--
+  - scope: 
+    - storage.type.numeric.bigint.ts
+    - storage.type.numeric.bigint.js
+    - constant.numeric.hex.ts
+    - constant.numeric.hex.js
+    settings:
+      foreground: *T9
+
   # ============= CSS ============= #
 
   # Punctuation

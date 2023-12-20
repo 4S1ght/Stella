@@ -23,6 +23,11 @@
                 "label": "Stella Dark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/stella.json"
+            },
+            {
+                "label": "Stella Light",
+                "uiTheme": "vs",
+                "path": "./themes/stella-light.json"
             }
         ]
     },

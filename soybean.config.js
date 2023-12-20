@@ -17,7 +17,6 @@ const mixHexCodes = (p, c1, c2) => {
     for (let i = 0; i < c1.length; i++) {
         const h1 = parseInt(c1[i], 16)
         const h2 = parseInt(c2[i], 16)
-        console.log(h1, h2)
         c3 += parseInt(h1 + ((h2 - h1) * p)).toString(16)
     }
     return c3
@@ -88,42 +87,20 @@ export default Soybean({
             {
                 file: './src',
                 handle: h.group([
-
-                    // Don't react to events events that aren't a file save (like delete, rename, etc)
-                    h.handle(e => e.watchEventType !== 'change' && e.stopPropagation()),
-
-                    h.fs.readFile('./src/{{filename}}', 'yamlFile', 'utf-8'),
-                    h.update('yamlFile', data => yaml.load(data, { schema })),
-
-                    h.handle(e => {
-                        for (const key in e.yamlFile.colors) 
-                            if (!e.yamlFile.colors[key]) delete e.yamlFile.colors[key]
-                    }),
-
-                    h.json.stringify('yamlFile', 'jsonFile', 4),
-                    h.update('filename', name => name.split('.')[0] + '.json'),
-                    
-                    h.fs.writeFile('./themes/{{filename}}', Symbol('jsonFile')),
-
-                    // ============= LINTING =============
-                    h.set('keys', 0),
-                    h.handle(async e => {
-                        e.set('docsKeys', await getDocsKeys())
-                    }),
-                    h.forIn(Symbol('yamlFile'), h.handle(e => {
-                        if (!docsKeys.find(([key]) => key === e.key) && e.key.indexOf(lintScope) === 0) {
-                            console.warn(`\x1b[31m${e.key}\x1b[0m`)
-                        }
-                    })),
-                    h.forEach(Symbol('docsKeys'), h.handle(e => {
-                        const [value, desc] = e.value
-                        const theme = e.yamlFile
-                        if (!Object.keys(theme.colors || []).find(x => x === value) && value.indexOf(lintScope) === 0) {
-                            console.warn(`\x1b[34m${value}\x1b[0m: \x1b[30m${desc}\x1b[0m`)
-                            e.update('keys', k => k+1)
-                        }
-                    })),
-                    h.handle(e => console.log(`Missing keys: ${e.keys} (scope: ${lintScope || '?'})`)),
+                    h.fs.readdir('./src/', 'sources'),
+                    h.fs.readFile('./props.yaml', 'props', 'utf-8'),
+                    h.forEach(Symbol('sources'), h.group([
+                        h.fs.readFile('./src/{{value}}', 'vars', 'utf-8'),
+                        h.handle(e => {
+                            const text = e.vars.replace('%props%', e.props)
+                            const theme = yaml.load(text, { schema })
+                            for (const key in theme.colors) if (!theme.colors[key]) delete theme.colors[key]
+                            e.set('theme', theme)
+                        }),
+                        h.json.stringify('theme', null, 4),
+                        h.update('value', name => name.split('.')[0] + '.json'),
+                        h.fs.writeFile('./themes/{{value}}', Symbol('theme')),
+                    ]))
                 ])
             }
         ]

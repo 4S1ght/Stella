@@ -1,77 +1,77 @@
-name: Stella
+name: Stella (High Contrast)
 author: 4S1ght
 stella:
 
   ui:
-    - &BGDark           '#19181b'
-    - &BGLight          '#222124'
-    - &BGBright         '#2e2d32'
-    - &BGBrighter       '#3a3940'
-    - &BGAccent         '#504d58'
+    - &BGDark           '#100f11'
+    - &BGLight          '#18171a'
+    - &BGBright         '#212024'
+    - &BGBrighter       '#34333a'
+    - &BGAccent         '#56535c'
     - &BGDrop           '#7e798a2b'
     - &BGMain           '#e3975d'
-    - &BGMainActive     '#eaa875'
-    - &BGSecond         '#FF6461'
-    - &FG               '#b1acb7'
-    - &FGLight          '#b3acb7'
-    - &FGDark           '#101013'
+    - &BGMainActive     '#fcbe8f'
+    - &BGSecond         '#ff504d'
+    - &FG               '#d2cdd8'
+    - &FGLight          '#d2cdd8'
+    - &FGDark           '#000000'
 
   git:
     - &GitIgnored       !a [*FG, 66]
-    - &GitAdded         '#96ab4f'
-    - &GitUntracked     '#96ab4f'
-    - &GitModified      '#a18073'
-    - &GitStageModified '#a18073'
-    - &GitConflict      '#FF6461'
-    - &GitDeleted       '#FF6461'
-    - &GitStageDeleted  '#ff3b38'
-    - &GitRenamed       '#5d78aa'
+    - &GitAdded         '#99b440'
+    - &GitUntracked     '#99b440'
+    - &GitModified      '#b1826f'
+    - &GitStageModified '#b1826f'
+    - &GitConflict      '#ff514f'
+    - &GitDeleted       '#ff514f'
+    - &GitStageDeleted  '#ff2e2b'
+    - &GitRenamed       '#5c81c7'
 
   diff:
-    - &DiffInserted     '#80ff45'
-    - &DiffRemoved      '#dd4343'
+    - &DiffInserted     '#51ff00'
+    - &DiffRemoved      '#ff2828'
 
   code:
-    - &Error            '#FF6461'
-    - &Warn             '#FFAD6E'
+    - &Error            '#ff413e'
+    - &Warn             '#ff9c51'
   
     - &TComment         !mix [*BGLight, *FG, 0.55]
     - &T1               '#a09891'
-    - &T2               '#df5764'
-    - &T3               '#da4e84'
-    - &T4               '#dc8357'
-    - &T5               '#9ebb4e'
-    - &T6               '#ebb164'
-    - &T7               '#5ba2f4'
+    - &T2               '#db4c5a'
+    - &T3               '#e94986'
+    - &T4               '#df7a48'
+    - &T5               '#a4c549'
+    - &T6               '#ffb95e'
+    - &T7               '#46acff'
     - &T8               !v [*T1]
-    - &T9               '#56B6C2'
+    - &T9               '#50cbdb'
 
     - &B1               '#ebb164'
     - &B2               '#df5764'
     - &B3               '#56B6C2' 
 
   symbol:
-    - &Sm               '#989db6'
-    - &Sm-1             '#f19355'
+    - &Sm               '#d2cdd8'
+    - &Sm-1             '#d87533'
     - &Sm-2             '#71a0ff'
-    - &Sm-3             '#ffd68e'
+    - &Sm-3             '#ffc157'
 
   ansi:
     - &ansiBrightBlack   '#6a665e'
     - &ansiBlack         '#3f3c37'
     - &ansiBrightWhite   '#f1eadd'
     - &ansiWhite         '#c4bcaf'
-    - &ansiBrightGreen   '#a6f170'
-    - &ansiGreen         '#73b941'
-    - &ansiBrightCyan    '#60e7c1'
-    - &ansiCyan          '#23b68c'
-    - &ansiBrightBlue    '#90c6ff'
-    - &ansiBlue          '#449af6'
-    - &ansiBrightMagenta '#df6cca'
-    - &ansiMagenta       '#c428a8'
-    - &ansiBrightRed     '#ff7f7f'
-    - &ansiRed           '#d53a2f'
-    - &ansiBrightYellow  '#ffcb71'
-    - &ansiYellow        '#dda94f'
+    - &ansiBrightGreen   '#97ff4d'
+    - &ansiGreen         '#66af32'
+    - &ansiBrightCyan    '#62ffd3'
+    - &ansiCyan          '#18ca98'
+    - &ansiBrightBlue    '#78b9ff'
+    - &ansiBlue          '#298ffc'
+    - &ansiBrightMagenta '#f571dd'
+    - &ansiMagenta       '#cc1fac'
+    - &ansiBrightRed     '#ff6b6b'
+    - &ansiRed           '#d13327'
+    - &ansiBrightYellow  '#ffc45e'
+    - &ansiYellow        '#d89a2f'
 
 %props%

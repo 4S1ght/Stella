@@ -25,8 +25,8 @@
                 "path": "./themes/stella.json"
             },
             {
-                "label": "Stella Contrast",
-                "uiTheme": "vs",
+                "label": "Stella | Contrast",
+                "uiTheme": "vs-dark",
                 "path": "./themes/stella-contrast.json"
             }
         ]

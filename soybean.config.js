@@ -1,14 +1,11 @@
 
 import { Soybean, handlers as h } from 'soybean'
 import yaml from 'js-yaml'
-import https from 'https'
 import c from 'chalk'
 
 // ==================================================================
 
 const docsPage = 'https://code.visualstudio.com/api/references/theme-color'
-let docsKeys
-let lintScope = ""
 
 const mixHexCodes = (p, c1, c2) => {
     c1 = c1.replace('#', '').match(/.{1,2}/g)
@@ -42,6 +39,23 @@ const schema = new yaml.DEFAULT_SCHEMA.extend([
 
 // ==================================================================
 
+const parse = h.group([
+    h.fs.readdir('./src/', 'sources'),
+    h.fs.readFile('./props.yaml', 'props', 'utf-8'),
+    h.forEach(Symbol('sources'), h.group([
+        h.fs.readFile('./src/{{value}}', 'vars', 'utf-8'),
+        h.handle(e => {
+            const text = e.vars.replace('%props%', e.props)
+            const theme = yaml.load(text, { schema })
+            for (const key in theme.colors) if (!theme.colors[key]) delete theme.colors[key]
+            e.set('theme', theme)
+        }),
+        h.json.stringify('theme', null, 4),
+        h.update('value', name => name.split('.')[0] + '.json'),
+        h.fs.writeFile('./themes/{{value}}', Symbol('theme')),
+    ]))
+])
+
 export default Soybean({
     cp: {},
     routines: {
@@ -49,25 +63,8 @@ export default Soybean({
             h.fs.mkdir('./themes', { recursive: true }),
         ],
         watch: [
-            {
-                file: './src',
-                handle: h.group([
-                    h.fs.readdir('./src/', 'sources'),
-                    h.fs.readFile('./props.yaml', 'props', 'utf-8'),
-                    h.forEach(Symbol('sources'), h.group([
-                        h.fs.readFile('./src/{{value}}', 'vars', 'utf-8'),
-                        h.handle(e => {
-                            const text = e.vars.replace('%props%', e.props)
-                            const theme = yaml.load(text, { schema })
-                            for (const key in theme.colors) if (!theme.colors[key]) delete theme.colors[key]
-                            e.set('theme', theme)
-                        }),
-                        h.json.stringify('theme', null, 4),
-                        h.update('value', name => name.split('.')[0] + '.json'),
-                        h.fs.writeFile('./themes/{{value}}', Symbol('theme')),
-                    ]))
-                ])
-            }
+            { handle: parse, file: './src' },
+            { handle: parse, file: './props.yaml' }
         ]
     },
     terminal: {

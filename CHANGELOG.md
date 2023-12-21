@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.3.0]
+- Added a higher contrast variant "Stella | Contrast" (experimental)
+
 ## [1.2.4]
 - JavaScript bigint (`123n`) and hex (`0x123`) number notation color changed to `#56B6C2` 
   for improved legibility that's required to easily distinguish them in large groups of numbers.

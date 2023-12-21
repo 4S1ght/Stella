@@ -40,41 +40,6 @@ const schema = new yaml.DEFAULT_SCHEMA.extend([
     })
 ])
 
-
-const getDocsKeys = async e => {
-
-    if (docsKeys) return docsKeys
-
-    /**
-     * Function ported from Dracula theme repo
-     * https://github.com/dracula/visual-studio-code
-     */
-    const blacklistedKeys = [ 'workbench.colorCustomizations', 'editor.tokenColorCustomizations', ]
-    const response = await (new Promise((resolve, reject) => {
-        https.get(docsPage, res => {
-            let body = ''
-            res.setEncoding('utf8')
-            res.on('data', data => (body += data))
-            res.on('end', () => resolve(body))
-            res.on('error', reject)
-        })
-    }))
-
-    const matches = response.match(new RegExp('<code>.+?</code>.+?</li>', 'g'))
-
-    docsKeys = [...matches]
-        .map(key => key.replace(/<code>|<\/code>|<\/li>/g, ''))
-        .filter(key => key.includes(': '))                       // Remove if doesn't contain ": "
-        .map(key => key.split(': '))
-        .filter(([key, desc]) => !/ /.test(key))                 // Remove if contains spaces
-        .filter(([key, desc]) => !/#.../.test(key))              // Remove if is a hex color
-        .filter(([key, desc]) => !/&quot;/.test(key))            // Remove if contains quotes
-        .filter(([key, desc]) => key.length > 4)                 // Remove if it's very small
-        .filter(([key, desc]) => !blacklistedKeys.includes(key)) // Remove if its in the blacklist  
-
-    return docsKeys
-}
-
 // ==================================================================
 
 export default Soybean({

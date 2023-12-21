@@ -20,14 +20,14 @@
     "contributes": {
         "themes": [
             {
-                "label": "Stella Dark",
+                "label": "Stella",
                 "uiTheme": "vs-dark",
                 "path": "./themes/stella.json"
             },
             {
-                "label": "Stella Light",
+                "label": "Stella Contrast",
                 "uiTheme": "vs",
-                "path": "./themes/stella-light.json"
+                "path": "./themes/stella-contrast.json"
             }
         ]
     },

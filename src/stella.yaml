@@ -51,7 +51,7 @@ stella:
     - &B3               '#56B6C2' 
 
   symbol:
-    - &Sm               '#989db6'
+    - &Sm               '#b1acb7'
     - &Sm-1             '#f19355'
     - &Sm-2             '#71a0ff'
     - &Sm-3             '#ffd68e'

@@ -392,7 +392,7 @@ colors:
 
   # Terminal
   terminal.background:                                            # The background of the Integrated Terminal's viewport.
-  terminal.border:                  '#0000'                       # The color of the border that separates split panes within the terminal. This defaults to panel.border.
+  terminal.border:                  !a [*BGAccent, 33]            # The color of the border that separates split panes within the terminal. This defaults to panel.border.
   terminal.foreground:              *ansiWhite                    # The default foreground color of the Integrated Terminal.
   terminal.ansiBlack:               *ansiBlack                    # 'Black' ANSI color in the terminal.
   terminal.ansiBlue:                *ansiBlue                     # 'Blue' ANSI color in the terminal.
@@ -793,12 +793,16 @@ tokenColors:
     settings:
       foreground: *T4
 
-  # Bigint notation, eg 12345n<--
+  # Bigint/hex/octal/binary notation, eg. 12345(n<--)
   - scope: 
     - storage.type.numeric.bigint.ts
     - storage.type.numeric.bigint.js
     - constant.numeric.hex.ts
     - constant.numeric.hex.js
+    - constant.numeric.octal.ts
+    - constant.numeric.octal.js
+    - constant.numeric.binary.ts
+    - constant.numeric.binary.js
     settings:
       foreground: *T9
 

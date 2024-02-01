@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.3.2]
+- Added missing terminal split-view border.
+- Changed default symbol color used in the file tree outline to match the global font color.
+- Changed binary/octal JavaScript/TypeScript numbers from yellow to a cyan shade.
+
 ## [1.3.0]
 - Added a higher contrast variant "Stella | Contrast" (experimental)
 

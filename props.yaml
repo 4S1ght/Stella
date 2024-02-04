@@ -26,14 +26,24 @@ colors:
 
   # Command center
   commandCenter.foreground:                                     # Foreground color of the Command Center.
-  commandCenter.background:              !a [*BGLight, 66]      # Background color of the Command Center.
-  commandCenter.activeForeground:                               # Active foreground color of the Command Center.
-  commandCenter.activeBackground:        !a [*BGLight, 99]      # Active background color of the Command Center.
+  commandCenter.background:              !a [*BGLight, 88]      # Background color of the Command Center.
+  commandCenter.activeForeground:        !a [*FGLight, aa]      # Active foreground color of the Command Center.
+  commandCenter.activeBackground:        !a [*BGLight, cc]      # Active background color of the Command Center.
   commandCenter.inactiveForeground:                             # Foreground color of the Command Center when the window is inactive.
   commandCenter.border:                  *BGLight               # Border color of the Command Center.
   commandCenter.activeBorder:            *BGLight               # Active border color of the Command Center.
   commandCenter.inactiveBorder:          '#0000'                # Border color of the Command Center when the window is inactive.
   commandCenter.debuggingBackground:                            # Command Center background color when a program is being debugged.
+
+  # Command center / quick picker
+  pickerGroup.border:                    *BGAccent              # Quick picker (Quick Open) color for grouping borders.
+  pickerGroup.foreground:                *FG                    # Quick picker (Quick Open) color for grouping labels.
+  quickInput.background:                 *BGBright              # Quick input background color. The quick input widget is the container for views like the color theme picker.
+  quickInput.foreground:                 *FG                    # Quick input foreground color. The quick input widget is the container for views like the color theme picker.
+  quickInputList.focusBackground:                               # Quick picker background color for the focused item.
+  quickInputList.focusForeground:        *BGMain                # Quick picker foreground color for the focused item.
+  quickInputList.focusIconForeground:                           # Quick picker icon foreground color for the focused item.
+  quickInputTitle.background:            red                    # Quick picker title background color. The quick picker widget is the container for pickers like the Command Palette.
 
   # Sidebar
   sideBar.background:                   *BGDark                 # Side Bar background color.
@@ -329,8 +339,8 @@ colors:
   list.focusHighlightForeground:                                  # List/Tree foreground color of the match highlights on actively focused items when searching inside the list/tree.
   list.focusOutline:                        '#0000'               # List/Tree outline color for the focused item when the list/tree is active. An active list/tree has keyboard focus, an inactive does not.
   list.focusAndSelectionOutline:                                  # List/Tree outline color for the focused item when the list/tree is active and selected. An active list/tree has keyboard focus, an inactive does not.
-  list.highlightForeground:                                       # List/Tree foreground color of the match highlights when searching inside the list/tree.
-  list.hoverBackground:                     !a [*BGBright, bb]    # List/Tree background when hovering over items using the mouse.
+  list.highlightForeground:                 *BGMain               # List/Tree foreground color of the match highlights when searching inside the list/tree.
+  list.hoverBackground:                     !a [*BGBrighter, 88]  # List/Tree background when hovering over items using the mouse.
   list.hoverForeground:                                           # List/Tree foreground when hovering over items using the mouse.
   list.inactiveSelectionBackground:         !a [*BGBright, 66]    # List/Tree background color for the selected item when the list/tree is inactive.
   list.inactiveSelectionForeground:         !a [*FG, aa]          # List/Tree foreground color for the selected item when the list/tree is inactive. An active list/tree has keyboard focus, an inactive does not.
@@ -340,13 +350,14 @@ colors:
   list.invalidItemForeground:                                     # List/Tree foreground color for invalid items, for example an unresolved root in explorer.
   list.errorForeground:                     *Error                # Foreground color of list items containing errors.
   list.warningForeground:                   *Warn                 # Foreground color of list items containing warnings.
+  list.filterMatchBackground:               !a [*BGSecond, 44]    # Background color of the filtered matches in lists and trees.
+  list.filterMatchBorder:                   !a [*BGSecond, bb]    # Border color of the filtered matches in lists and trees.
+  list.deemphasizedForeground:                                    # List/Tree foreground color for items that are deemphasized.
+  
   listFilterWidget.background:              *BGBright             # List/Tree Filter background color of typed text when searching inside the list/tree.
   listFilterWidget.outline:                                       # List/Tree Filter Widget's outline color of typed text when searching inside the list/tree.
   listFilterWidget.noMatchesOutline:                              # List/Tree Filter Widget's outline color when no match is found of typed text when searching inside the list/tree.
   listFilterWidget.shadow:                                        # Shadow color of the type filter widget in lists and tree.
-  list.filterMatchBackground:               !a [*BGSecond, 44]    # Background color of the filtered matches in lists and trees.
-  list.filterMatchBorder:                   !a [*BGSecond, bb]    # Border color of the filtered matches in lists and trees.
-  list.deemphasizedForeground:                                    # List/Tree foreground color for items that are deemphasized.
 
   tree.indentGuidesStroke:                  !a [*BGAccent, 77]    # Tree Widget's stroke color for indent guides.
   tree.inactiveIndentGuidesStroke:          !a [*BGAccent, 33]    # Tree stroke color for the indentation guides that are not active.

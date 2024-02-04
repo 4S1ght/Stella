@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the extension are be documented in this file.
 
+## [1.3.3]
+- Fixed command center color contrast issues that appeared on mouse hovers and list item selection.
+- Fixed suggestion highlight color in the quick picker menu (CTRL+P) that previously appeared in the default blue color.
+
 ## [1.3.2]
 - Added missing terminal split-view border.
 - Changed default symbol color used in the file tree outline to match the global font color.

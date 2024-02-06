@@ -1,5 +1,13 @@
 # Change Log
-All notable changes to the extension are be documented in this file.
+All notable changes to the extension are being documented in this file.
+
+## [1.3.4]
+- Slight color shade changes to keybinding labels - Visible in key bindings menu and command center under `CTRL + SHIFT + P` or `CMD + SHIFT + P`.
+- Fixed missing table column borders which made it hard to resize individual table columns.
+- Added missing styling to panel section headers - Panels are shown below the editor area and contain views like output and integrated terminal.
+- Added a yellow border to better signify the active terminal tab.
+
+    ![Thumbnail](https://raw.githubusercontent.com/4S1ght/Stella/main/images/1.3.4-changelog-1.png)
 
 ## [1.3.3]
 - Fixed command center color contrast issues that appeared on mouse hovers and list item selection.

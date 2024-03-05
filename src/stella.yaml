@@ -24,7 +24,7 @@ stella:
     - &GitStageModified '#a18073'
     - &GitConflict      '#FF6461'
     - &GitDeleted       '#FF6461'
-    - &GitStageDeleted  '#ff3b38'
+    - &GitStageDeleted  '#FF6461'
     - &GitRenamed       '#5d78aa'
 
   diff:

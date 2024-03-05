@@ -1,0 +1,77 @@
+name: Stella
+author: 4S1ght
+stella:
+
+  ui:
+    - &BGDark           '#dacfcc'
+    - &BGLight          '#f1e6e0'
+    - &BGBright         '#fff3ed'
+    - &BGBrighter       '#ffeee6'
+    - &BGAccent         '#c7b7b3'
+    - &BGDrop           '#5d565318'
+    - &BGMain           '#e3975d'
+    - &BGMainActive     '#eaa875'
+    - &BGSecond         '#FF6461'
+    - &FG               '#3f3a39'
+    - &FGLight          '#6b6260'
+    - &FGDark           '#1c1a19'
+
+  git:
+    - &GitIgnored       !a [*FG, 44]
+    - &GitAdded         '#819c29'
+    - &GitUntracked     '#819c29'
+    - &GitModified      '#c38151'
+    - &GitStageModified '#c38151'
+    - &GitConflict      '#ff4542'
+    - &GitDeleted       '#ff4542'
+    - &GitStageDeleted  '#ff4542'
+    - &GitRenamed       '#295ab3'
+
+  diff:
+    - &DiffInserted     '#47e200'
+    - &DiffRemoved      '#de0000'
+
+  code:
+    - &Error            '#fb322f'
+    - &Warn             '#ff7710'
+  
+    - &TComment         !mix [*BGLight, *FG, 0.45]
+    - &T1               '#6d645c'
+    - &T2               '#cd1224'
+    - &T3               '#df36a4'
+    - &T4               '#bb6815'
+    - &T5               '#72970b'
+    - &T6               '#af113e'
+    - &T7               '#7261ce'
+    - &T8               !v [*T1]
+    - &T9               '#0099ae'
+
+    - &B1               '#bb6815'
+    - &B2               '#cd1224'
+    - &B3               '#0099ae' 
+
+  symbol:
+    - &Sm               '#776c5c'
+    - &Sm-1             '#e7813d'
+    - &Sm-2             '#4d83f0'
+    - &Sm-3             '#bf990f'
+
+  ansi:
+    - &ansiBrightBlack   '#6a665e'
+    - &ansiBlack         '#3f3c37'
+    - &ansiBrightWhite   '#f1eadd'
+    - &ansiWhite         '#c4bcaf'
+    - &ansiBrightGreen   '#a6f170'
+    - &ansiGreen         '#73b941'
+    - &ansiBrightCyan    '#60e7c1'
+    - &ansiCyan          '#23b68c'
+    - &ansiBrightBlue    '#90c6ff'
+    - &ansiBlue          '#449af6'
+    - &ansiBrightMagenta '#df6cca'
+    - &ansiMagenta       '#c428a8'
+    - &ansiBrightRed     '#ff7f7f'
+    - &ansiRed           '#d53a2f'
+    - &ansiBrightYellow  '#ffcb71'
+    - &ansiYellow        '#dda94f'
+
+%props%

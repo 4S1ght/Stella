@@ -28,6 +28,11 @@
                 "label": "Stella | Contrast",
                 "uiTheme": "vs-dark",
                 "path": "./themes/stella-contrast.json"
+            },
+            {
+                "label": "Stella | Light",
+                "uiTheme": "vs",
+                "path": "./themes/stella-light.json"
             }
         ]
     },

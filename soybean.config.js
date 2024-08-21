@@ -63,8 +63,8 @@ export default Soybean({
             h.fs.mkdir('./themes', { recursive: true }),
         ],
         watch: [
-            { handle: parse, file: './src', options: { rateLimiter: 3000 } },
-            { handle: parse, file: './props.yaml', options: { rateLimiter: 3000 } }
+            { handle: parse, file: './src', options: { rateLimiter: 600 } },
+            { handle: parse, file: './props.yaml', options: { rateLimiter: 600 } }
         ]
     },
     terminal: {

@@ -106,6 +106,8 @@ colors:
   editorIndentGuide.activeBackground4:                          # Color of the active editor indentation guides (4).
   editorIndentGuide.activeBackground5:                          # Color of the active editor indentation guides (5).
   editorIndentGuide.activeBackground6:                          # Color of the active editor indentation guides (6).
+
+  editorRuler.foreground:               !a [*FG, 11]            # Color of the editor rulers.
   
   # Inlay hints
   editorInlayHint.background:           *BGBright               # Background color of inline hints.

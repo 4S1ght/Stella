@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the extension are being documented in this file.
 
+## [1.3.5]
+- Fixed `editorRuler` color.
+- Altered pink & red syntax shades.
+
 ## [1.3.4]
 - Slight color shade changes to keybinding labels - Visible in key bindings menu and command center under `CTRL + SHIFT + P` or `CMD + SHIFT + P`.
 - Fixed missing table column borders which made it hard to resize individual table columns.

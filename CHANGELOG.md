@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the extension are being documented in this file.
 
+## [1.3.6]
+- Removed red outline around extension autosuggestions.
+
 ## [1.3.5]
 - Fixed `editorRuler` color.
 - Altered pink & red syntax shades.

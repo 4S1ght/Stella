@@ -293,9 +293,9 @@ colors:
   editorHoverWidget.highlightForeground:                                    # Foreground color of the active item in the parameter hint.
   editorHoverWidget.statusBarBackground:                                    # Background color of the editor hover status bar.
   
-  editorGhostText.border:                           '#f00'                  # Border color of the ghost text shown by inline completion providers and the suggest preview.
+  editorGhostText.border:                                                   # Border color of the ghost text shown by inline completion providers and the suggest preview.
   editorGhostText.background:                                               # Background color of the ghost text in the editor.
-  editorGhostText.foreground:                                               # Foreground color of the ghost text shown by inline completion providers and the suggest preview.
+  editorGhostText.foreground:                       !a [*TComment, aa]      # Foreground color of the ghost text shown by inline completion providers and the suggest preview.
   
   editorStickyScroll.background:                    *BGLight                # Editor sticky scroll background color.
   editorStickyScrollHover.background:               *BGBrighter             # Editor sticky scroll on hover background color.
